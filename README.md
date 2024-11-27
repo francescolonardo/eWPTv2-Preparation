@@ -1,4 +1,4 @@
-# eLearnSecurity Web Application Penetration Testing Professional (eWPTv2) Preparation
+# eLearnSecurity Web Application Penetration Testing Professional (eWPTv2)
 
 ## Testing For Common Attacks
 
