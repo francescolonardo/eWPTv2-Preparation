@@ -11,11 +11,11 @@ This course is designed to equip you with the knowledge and skills needed to ide
 ### Course Topic Overview
 
 - HTTP Method and Authentication Testing
-- Sensitive Data Exposure
-- Broken Authentication Attacks (Attacking Login Forms, Bypassing Authentication, etc.)
+- Testing for Sensitive Data Exposure
+- Broken Authentication Attacks (Attacking Login Forms, Bypassing Authentication)
 - Session Security Testing (Session Hijacking, Session Fixation and CSRF)
 - Injection and Input Validation Attacks (Command Injection, Code Injection)
-- Testing For Security Misconfigurations
+- Testing for Security Misconfigurations
 - Exploiting Vulnerable and Outdated Components
 
 ### Prerequisites
