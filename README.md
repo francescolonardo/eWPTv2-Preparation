@@ -19,4 +19,8 @@
 
 ## [Web Service Security Testing](./web_service_security_testing.md)
 
-- [ ] 
+- [ ] Introduction to Web Services
+- [ ] Web Service Implementations
+- [ ] WSDL Language Fundamentals
+- [ ] Web Service Security Testing
+- [ ] SOAP Web Service Security Testing
