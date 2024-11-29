@@ -16,16 +16,16 @@
 
 - [x] Identifying and Exploiting Arbitrary File Upload Vulnerabilities (Bypassing File Upload Extension Filters, Bypassing PHPx Blacklists)
 - [x] Identifying and Exploiting Directory/Path Traversal Vulnerabilities
-- [ ] Identifying and Exploiting LFI Vulnerabilities
-- [ ] Identifying and Exploiting RFI Vulnerabilities
+- [x] Identifying and Exploiting LFI Vulnerabilities
+- [x] Identifying and Exploiting RFI Vulnerabilities
 
 ## [Web Service Security Testing](./web_service_security_testing.md)
 
-- [ ] Introduction to Web Services
-- [ ] Web Service Implementations
-- [ ] WSDL Language Fundamentals
-- [ ] Web Service Security Testing
-- [ ] SOAP Web Service Security Testing
+- [x] Introduction to Web Services
+- [x] Web Service Implementations
+- [x] WSDL Language Fundamentals
+- [x] Web Service Security Testing
+- [x] SOAP Web Service Security Testing
 
 ## [CMS Security Testing](./cms_security_testing.md)
 
