@@ -1,5 +1,7 @@
 # eLearnSecurity Web Application Penetration Testing Professional (eWPTv2)
 
+[...]
+
 ## [Testing for Common Attacks](./testing_for_common_attacks.md)
 
 - [x] HTTP Method and Authentication Testing
@@ -24,3 +26,16 @@
 - [ ] WSDL Language Fundamentals
 - [ ] Web Service Security Testing
 - [ ] SOAP Web Service Security Testing
+
+## [CMS Security Testing](./cms_security_testing.md)
+
+- [ ] Content Management Systems (CMS) Security Testing Methodology
+- [ ] WordPress Security Testing Methodology
+- [ ] WordPress Information Gathering and Enumeration
+- [ ] WordPress Vulnerability Scanning
+- [ ] WordPress Authentication Attacks
+- [ ] WordPress Plugin Exploitation
+- [ ] WordPress Black-Box Penetration Testing
+
+## [Encoding, Filtering and Evasion Basics](./encoding_filtering_and_evasion_basics.md)
+
