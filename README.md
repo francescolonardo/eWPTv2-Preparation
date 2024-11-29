@@ -21,15 +21,12 @@
 
 ## 07 [Web Service Security Testing](./07_web_service_security_testing.md)
 
-- [x] Introduction to Web Services
-- [x] Web Service Implementations
-- [x] WSDL Language Fundamentals
 - [x] Web Service Security Testing
 - [x] SOAP Web Service Security Testing
 
 ## 08 [CMS Security Testing](./08_cms_security_testing.md)
 
-- [ ] Content Management Systems (CMS) Security Testing Methodology
+- [ ] CMS Security Testing Methodology
 - [ ] WordPress Security Testing Methodology
 - [ ] WordPress Information Gathering and Enumeration
 - [ ] WordPress Vulnerability Scanning
