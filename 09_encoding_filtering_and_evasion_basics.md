@@ -11,7 +11,7 @@ This course will start off by introducing you to the practice of characterset en
 
 ### Course Topic Overview
 
-- Introduction to Encoding, Filtering and Evasion
+- Charset Encoding
 - HTML Encoding
 - URL Encoding
 - Base64 Encoding
@@ -44,7 +44,7 @@ This course will start off by introducing you to the practice of characterset en
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - Charset Encoding](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -65,7 +65,7 @@ This course will start off by introducing you to the practice of characterset en
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - HTML Encoding](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -86,7 +86,7 @@ This course will start off by introducing you to the practice of characterset en
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - URL Encoding](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -144,7 +144,7 @@ The following username and password may be used to explore the application:
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - Mutillidae 2](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -177,7 +177,7 @@ The following username and password may be used to explore the application:
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - Damn Vulnerable Web Application](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -210,7 +210,7 @@ In the exercise below, <u>the attacker is not authenticated to the web applica
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - Chamilo LMS](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
@@ -251,104 +251,7 @@ Instructions: 
 
 #### Lab Solution
 
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
----
-
-## Exploiting Vulnerabilities
-
-### WP Plugin - Arbitrary File Upload Vulnerability
-
-#### Lab Solution
-
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
-### WP Plugin - Stored XSS Vulnerability (CVE-2020-9371)
-
-#### Lab Environment
-
-**WordPress Appointment Booking Calendar Stored XSS**
-
-In this exercise, the attacker has admin access already so there is nothing more to be done. However, looks like the <u>admin access does lead to an XSS attack</u>. So you can try to find this XSS as a purely academic exercise.
-
-<u>WordPress Appointment Booking Calendar plugin (before 1.3.35) is vulnerable to Stored Cross-Site Scripting documented in CVE-2020-9371</u>.
-
-The following username and passwords may be used to explore the application and/or find a vulnerability which might require authenticated access:
-- Username: "admin"
-- Password: "password1".
-
-**Objective**: Your task is to find and exploit this vulnerability.
-
-#### Lab Solution
-
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
-``:
-```
-
-```
-
----
-
-## WordPress Black-Box Pentest
-
-### WordPress Black-Box Pentest
-
-#### Lab Environment
-
-**Exploiting WordPress**
-
-In this lab, you will learn how to perform a dictionary attack to get admin access on a WordPress-based website and gain shell access on the target machine by exploiting a vulnerable WordPress plugin.
-
-In this lab environment, the user will get access to a Kali GUI instance. The WordPress web application can be accessed using the tools installed on Kali on `http://demo.ine.local`.
-
-**Objective:** Gain admin access on the WordPress website. Also obtain a shell on the target machine and get the flag file from the target machine.
-
-Dictionary attack wordlist: `/root/Desktop/wordlists/100-common-passwords.txt`.
-
-#### Lab Solution
-
-![Lab - ](./assets/encoding_filtering_and_evasion_basics_lab_.png)
+![Lab - Squid: Browser Based Restriction](./assets/encoding_filtering_and_evasion_basics_lab_.png)
 
 ``:
 ```
