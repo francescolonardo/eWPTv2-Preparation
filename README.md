@@ -39,3 +39,7 @@
 
 ## 09 [Encoding, Filtering and Evasion Basics](./09_encoding_filtering_and_evasion_basics.md)
 
+[...]
+
+---
+---
