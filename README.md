@@ -26,9 +26,9 @@
 
 ## 08 [CMS Security Testing](./08_cms_security_testing.md)
 
-- [ ] CMS Security Testing Methodology
-- [ ] WordPress Security Testing Methodology
-- [ ] WordPress Information Gathering and Enumeration
+- [x] CMS Security Testing Methodology
+- [x] WordPress Security Testing Methodology
+- [x] WordPress Information Gathering and Enumeration
 - [ ] WordPress Vulnerability Scanning
 - [ ] WordPress Authentication Attacks
 - [ ] WordPress Plugin Exploitation
