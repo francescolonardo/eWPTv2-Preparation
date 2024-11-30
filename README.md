@@ -29,7 +29,7 @@
 - [x] CMS Security Testing Methodology
 - [x] WordPress Security Testing Methodology
 - [x] WordPress Information Gathering and Enumeration
-- [ ] WordPress Vulnerability Scanning
+- [x] WordPress Vulnerability Scanning
 - [ ] WordPress Authentication Attacks
 - [ ] WordPress Plugin Exploitation
 - [ ] WordPress Black-Box Penetration Testing
