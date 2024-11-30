@@ -42,8 +42,8 @@
 - [x] Base64 Encoding
 - [x] Bypassing Client-Side Filters
 - [x] Bypassing Server-Side Filters
-- [ ] Web Application Firewalls (WAF) and Proxies
-- [ ] Evading WAFs, Proxies and IDSs
+- [x] Web Application Firewalls (WAF) and Proxies
+- [x] Evading WAFs, Proxies and IDSs
 
 ---
 ---
