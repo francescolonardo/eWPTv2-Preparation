@@ -11,7 +11,7 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ### Course Topic Overview
 
-- Content Management Systems (CMS) Security Testing Methodology
+- CMS Security Testing Methodology
 - WordPress Security Testing Methodology
 - WordPress Information Gathering and Enumeration
 - WordPress Vulnerability Scanning
@@ -29,7 +29,7 @@ You will then learn how to put to use the information gathered in the enumeratio
 ### Learning Objectives
 
 - You will have an understanding as to what CMSs are, how they work and what they are used for.
-+ You will have a solid understanding of how to methodologically perform a web app pentest on WordPress.
+- You will have a solid understanding of how to methodologically perform a web app pentest on WordPress.
 - You will have the ability to perform passive and active information gathering and enumeration on WordPress using both manual and automated techniques.
 - You will be able to identify vulnerabilities in plugins and themes on WordPress sites both manually and automatically.
 - You will be able to effectively use WPScan to automate information gathering and enumeration, identify vulnerabilities and perform brute-force attacks against WordPress sites.
@@ -60,19 +60,64 @@ In the exercise below, the attacker is unauthenticated to the web application an
 
 #### Lab Solution
 
-![Lab - ](./assets/cms_security_testing_lab_.png)
+![Lab - WordPress AdRotate](./assets/cms_security_testing_lab_wordpress_adrotate.png)
 
-``:
+`whatweb ...`:
 ```
 
 ```
 
-``:
+`view-source:...`:
 ```
 
 ```
 
-``:
+`curl -I ...`:
+```
+
+```
+
+`curl .../readme.html`:
+```html
+
+```
+
+`curl .../readme.txt`:
+```
+
+```
+
+`curl .../wp-login.php`:
+```
+
+```
+
+`curl .../wp-admin.php`:
+```
+
+```
+
+`curl .../CHANGELOG.txt`:
+```
+
+```
+
+`curl -s -X GET ... | grep 'http' | grep -E '?ver=' | sed -E 's,href=|src=,THIIIS,g' | awk -F 'THIIIS' '{print $2}' | cut -d "'" -f2`:
+```
+
+```
+
+`wpscan --url ...`:
+```
+
+```
+
+`curl .../?feed=rss2`:
+```
+
+```
+
+`cat ./fFApnjkM`:
 ```
 
 ```
@@ -93,20 +138,126 @@ In the exercise below, <u>the attacker is not authenticated to the web applicati
 
 #### Lab Solution
 
-![Lab - ](./assets/cms_security_testing_lab_.png)
 
-``:
+![Lab - WordPress AdRotate 1](./assets/cms_security_testing_lab_wordpress_adrotate_1.png)
+
+`curl -s -I -X GET .../?author=1`:
 ```
 
 ```
 
-``:
+`curl -s -I -X GET .../?author=3`:
 ```
 
 ```
 
-``:
+`curl -s -X GET .../wp-json/wp/v2/users | jq`:
 ```
+
+```
+
+`curl -s -I -X GET .../?author/admin/`:
+```
+
+```
+
+/login.php
+![Lab - WordPress AdRotate 2](./assets/cms_security_testing_lab_wordpress_adrotate_2.png)
+
+`burpsuite` > `Repeater`
+
+`HTTP Request`:
+```http
+
+test test
+```
+`HTTP Response`:
+```http
+
+```
+
+`burpsuite` > `Repeater`
+
+`HTTP Request`:
+```http
+
+admin test
+```
+`HTTP Response`:
+```http
+
+```
+
+`curl -s -X GET ... | grep -E 'wp-content/plugins/' | sed -E 's,href=|src=,THIIIS,g' | awk -F 'THIIIS' '{print $2}' | cut -d "'" -f2`:
+```
+
+```
+
+`curl -s -X GET .../login.php | grep -E 'wp-content/plugins/' | sed -E 's,href=|src=,THIIIS,g' | awk -F 'THIIIS' '{print $2}' | cut -d "'" -f2`:
+```
+
+```
+
+`curl -s -X GET ... | grep -E 'wp-content/themes' | sed -E 's,href=|src=,THIIIS,g' | awk -F 'THIIIS' '{print $2}' | cut -d "'" -f2`:
+```
+
+```
+
+`wpscan --url ... --enumerate users`:
+```
+
+```
+
+`curl -s .../xmlrpc.php`:
+```
+
+```
+
+`burpsuite` > `Repeater`
+
+`HTTP Request`:
+```http
+POST
+
+<methodCall>
+	<methodName>
+		system.listMethods
+	</methodName>
+	<params>
+	</params>
+</methodCall>
+```
+`HTTP Response`:
+```http
+
+```
+
+`burpsuite` > `Repeater`
+
+`HTTP Request`:
+```http
+POST
+
+<methodCall>
+	<methodName>
+		wp.getUserBlogs
+	</methodName>
+	<params>
+		<param>
+			<value>
+				admin
+			</value>
+		</param>
+		<param>
+			<value>
+				password123
+			</value>
+		</param>
+	</params>
+</methodCall>
+```
+`HTTP Response`:
+```http
 
 ```
 
@@ -126,40 +277,62 @@ In the exercise below, <u>the attacker is unauthenticated to the web application
 
 #### Lab Solution
 
-![Lab - ](./assets/cms_security_testing_lab_.png)
-
-``:
+`ls -l /usr/share/seclists/Discovery/Web-Content/CMS/`:
 ```
 
 ```
 
-``:
+`gobuster dir --url ... --wordlist /usr/share/seclists/Discovery/Web-Content/CMS/wordpress.fuzz.txt -b '404'`:
 ```
 
 ```
 
-``:
+`gobuster dir --url ... --wordlist /usr/share/seclists/Discovery/Web-Content/CMS/wp-themes.txt -b '404'`:
 ```
 
+```
+
+`gobuster dir --url ... --wordlist /usr/share/seclists/Discovery/Web-Content/common.txt -b '404'`:
+```
+
+```
+
+`wpscan --url ...`:
+```
+
+uploads
 ```
 
 ### WordPress Enumeration with Nmap NSE Scripts
 
 #### Lab Solution
 
-![Lab - ](./assets/cms_security_testing_lab_.png)
-
-``:
+`sudo nmap -sSV -p- -T5 ...`:
 ```
 
 ```
 
-``:
+`sudo nmap -sSVC -p- -T5 ...`:
 ```
 
 ```
 
-``:
+`ls -al /usr/share/nmap/scripts | grep 'wordpress'`:
+```
+
+```
+
+`sudo nmap -sSV -p80,443 --script=http-wordpress-enum --script-args type='plugins' ...`:
+```
+
+```
+
+`sudo nmap -sSV -p80,443 --script=http-wordpress-enum --script-args type='themes' ...`:
+```
+
+```
+
+`sudo nmap -sSV -p80,443 --script=http-wordpress-users --script-args limit=50 ...`:
 ```
 
 ```
