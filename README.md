@@ -36,12 +36,12 @@
 
 ## 09 [Encoding, Filtering and Evasion Basics](./09_encoding_filtering_and_evasion_basics.md)
 
-- [ ] Charset Encoding
-- [ ] HTML Encoding
-- [ ] URL Encoding
-- [ ] Base64 Encoding
-- [ ] Bypassing Client-Side Filters
-- [ ] Bypassing Server-Side Filters
+- [x] Charset Encoding
+- [x] HTML Encoding
+- [x] URL Encoding
+- [x] Base64 Encoding
+- [x] Bypassing Client-Side Filters
+- [x] Bypassing Server-Side Filters
 - [ ] Web Application Firewalls (WAF) and Proxies
 - [ ] Evading WAFs, Proxies and IDSs
 
