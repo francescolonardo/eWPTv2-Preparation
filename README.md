@@ -2,6 +2,14 @@
 
 [...]
 
+
+## 04 [SQL Injection Attacks](./04_sql_injection_attacks.md)
+
+- [x] Identifying and Exploiting In-Band SQL Injection Vulnerabilities (Error-Based and Union-Based)
+- [x] Identifying and Exploiting Blind SQL Injection Vulnerabilities (Time-Based and Boolean-Based)
+- [x] Identifying and Exploiting SQL Injection Vulnerabilities with Automated Tools (SQLMap)
+- [x] Pentesting NoSQL Databases
+
 ## 05 [Testing for Common Attacks](./04_testing_for_common_attacks.md)
 
 - [x] HTTP Method and Authentication Testing
