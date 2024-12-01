@@ -30,9 +30,9 @@
 - [x] WordPress Security Testing Methodology
 - [x] WordPress Information Gathering and Enumeration
 - [x] WordPress Vulnerability Scanning
-- [ ] WordPress Authentication Attacks
-- [ ] WordPress Plugin Exploitation
-- [ ] WordPress Black-Box Penetration Testing
+- [x] WordPress Authentication Attacks
+- [x] WordPress Plugin Exploitation
+- [x] WordPress Black-Box Penetration Testing
 
 ## 09 [Encoding, Filtering and Evasion Basics](./09_encoding_filtering_and_evasion_basics.md)
 
