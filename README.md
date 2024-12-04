@@ -2,7 +2,6 @@
 
 ## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
-- [x] Introduction to Web Enumeration and Information Gathering
 - [x] Finding Website Ownership and IP Addresses
 - [x] Reviewing Webserver Metafiles for Information Leakage
 - [x] Search Engine Discovery
@@ -21,7 +20,11 @@
 
 ## 03 [XSS Attacks](./03_xss_attacks.md)
 
-- [x] 
+- [x] Anatomy of a Cross-Site Scripting Attack
+- [x] Identifying and Exploiting Reflected XSS Vulnerabilities
+- [x] Identifying and Exploiting Stored XSS Vulnerabilities
+- [x] Identifying and Exploiting DOM-Based XSS Vulnerabilities
+- [x] Identifying and Exploiting XSS Vulnerabilities with Automated Tools (XSSer)
 
 ## 04 [SQL Injection Attacks](./04_sql_injection_attacks.md)
 
