@@ -15,7 +15,13 @@
 - [x] Web App Vulnerability Scanning
 - [x] Automated Recon Frameworks
 
-[...]
+## 02 [Web Proxies and Web Information Gathering](./web_proxies_and_web_information_gathering.md)
+
+- [x] 
+
+## 03 [XSS Attacks](./03_xss_attacks.md)
+
+- [x] 
 
 ## 04 [SQL Injection Attacks](./04_sql_injection_attacks.md)
 
