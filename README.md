@@ -14,9 +14,17 @@
 - [x] Web App Vulnerability Scanning
 - [x] Automated Recon Frameworks
 
-## 02 [Web Proxies and Web Information Gathering](./web_proxies_and_web_information_gathering.md)
+## 02 [Web Proxies and Web Information Gathering](./02_web_proxies_and_web_information_gathering.md)
 
-- [x] 
+- [x] Configuring the Burp Suite Proxy
+- [x] Burp Suite Dashboard and UI
+- [x] Burp Suite Target, Intruder, Sequencer, Repeater and Decoder
+- [x] Configuring the OWASP ZAP Proxy and Browser Certificate
+- [x] OWASP ZAP Dashboard and UI
+- [x] Crawling and Spidering with OWASP ZAP
+- [x] OWASP ZAP Target Context
+- [x] Directory Enumeration with Burp Suite and OWASP ZAP
+- [x] Attacking HTTP Forms with Burp Suite and OWASP ZAP
 
 ## 03 [XSS Attacks](./03_xss_attacks.md)
 
