@@ -1,7 +1,21 @@
 # eLearnSecurity Web Application Penetration Testing Professional (eWPTv2)
 
-[...]
+## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
+- [x] Introduction to Web Enumeration and Information Gathering
+- [x] Finding Website Ownership and IP Addresses
+- [x] Reviewing Webserver Metafiles for Information Leakage
+- [x] Search Engine Discovery
+- [x] Web App Fingerprinting
+- [x] Source Code Analysis
+- [x] Website Crawling and Spidering
+- [x] Web Server Fingerprinting
+- [x] DNS Enumeration
+- [x] Subdomain Enumeration
+- [x] Web App Vulnerability Scanning
+- [x] Automated Recon Frameworks
+
+[...]
 
 ## 04 [SQL Injection Attacks](./04_sql_injection_attacks.md)
 
