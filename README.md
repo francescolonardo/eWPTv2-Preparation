@@ -16,13 +16,9 @@
 
 ## 02 [Web Proxies and Web Information Gathering](./02_web_proxies_and_web_information_gathering.md)
 
-- [x] Configuring the Burp Suite Proxy
-- [x] Burp Suite Dashboard and UI
+- [x] Passive Crawling with Burp Suite
 - [x] Burp Suite Target, Intruder, Sequencer, Repeater and Decoder
-- [x] Configuring the OWASP ZAP Proxy and Browser Certificate
-- [x] OWASP ZAP Dashboard and UI
 - [x] Crawling and Spidering with OWASP ZAP
-- [x] OWASP ZAP Target Context
 - [x] Directory Enumeration with Burp Suite and OWASP ZAP
 - [x] Attacking HTTP Forms with Burp Suite and OWASP ZAP
 
