@@ -11,13 +11,13 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ### Course Topic Overview
 
-- CMS Security Testing Methodology
-- WordPress Security Testing Methodology
-- WordPress Information Gathering and Enumeration
-- WordPress Vulnerability Scanning
-- WordPress Authentication Attacks
-- WordPress Plugin Exploitation
-- WordPress Black-Box Penetration Testing
+- Information Gathering and Enumeration: WordPress Version Enumeration (manual and with WPScan/WhatWeb)
+- Information Gathering and Enumeration: WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
+- Information Gathering and Enumeration: Hidden Files and Sensitive Information Enumeration (with Gobuster)
+- WordPress Vulnerability Scanning (with WPScan)
+- WordPress Authentication Brute-Force Attacks (with Burp Suite)
+- WordPress Plugin Vulnerabilities: Arbitrary File Upload
+- WordPress Plugin Vulnerabilities: Stored XSS
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ## Information Gathering and Enumeration
 
-### WordPress Version Enumeration
+### WordPress Version Enumeration (manual and with WPScan/WhatWeb)
 
 #### Lab Environment
 
@@ -324,7 +324,7 @@ Interesting Finding(s):
 </rss>
 ```
 
-### Enumerating WordPress Users, Plugins and Themes
+### WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
 
 #### Lab Environment
 
@@ -881,7 +881,7 @@ Content-Length: 403
 ```
 ❌
 
-### Enumerating Hidden Files and Sensitive Information
+### Hidden Files and Sensitive Information Enumeration (with Gobuster)
 
 #### Lab Environment
 
@@ -1117,7 +1117,7 @@ Attempts: 5 — Username: pentester
 Attempts: 6 — Username: tes_user
 ```
 
-### WordPress Enumeration with Nmap NSE Scripts
+### WordPress Enumeration (with Nmap)
 
 #### Lab Solution
 
@@ -1231,7 +1231,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.11 seconds
 
 ## Vulnerability Scanning
 
-### WordPress Vulnerability Scanning with WPScan
+### WordPress Vulnerability Scanning (with WPScan)
 
 #### Lab Environment
 
@@ -1648,7 +1648,7 @@ wordpress
 
 ## Authentication Attacks
 
-### WordPress Brute-Force Attacks
+### WordPress Authentication Brute-Force Attacks (with Burp Suite)
 
 #### Lab Solution
 
@@ -1787,7 +1787,7 @@ log=pentester&pwd=password1&wp-submit=Log+In&redirect_to=%2Fwp-admin%2F&testcook
 
 ## Exploiting Vulnerabilities
 
-### WP Plugin - Arbitrary File Upload Vulnerability
+### WordPress Plugin Vulnerabilities: Arbitrary File Upload
 
 #### Lab Environment
 
@@ -1938,7 +1938,7 @@ echo "<pre>$output</pre>";
 </pre>
 ```
 
-### WP Plugin - Stored XSS Vulnerability (CVE-2020-9371)
+### WordPress Plugin Vulnerabilities: Stored XSS
 
 #### Lab Environment
 
@@ -2020,7 +2020,7 @@ Tested on Windows 7 Pro SP1 32-bit, Wordpress 5.3.2 and Excel 2016
 
 ---
 
-## WordPress Black-Box Pentest
+## WordPress Black-Box Penetration Testing
 
 ### WordPress Black-Box Pentest
 
