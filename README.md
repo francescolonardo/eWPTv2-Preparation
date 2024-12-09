@@ -59,8 +59,7 @@
 
 ## 07 [Web Service Security Testing](./07_web_service_security_testing.md)
 
-- [x] Web Service Security Testing
-- [x] SOAP Web Service Security Testing
+- [x] SOAP-based Web Service Security Testing (WSDL Disclosure and Method Enumeration, Invoking Hidden Methods, Testing for SQL Injection, Testing for Command Injection)
 
 ## 08 [CMS Security Testing](./08_cms_security_testing.md)
 
