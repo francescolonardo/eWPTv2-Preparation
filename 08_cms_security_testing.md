@@ -11,13 +11,13 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ### Course Topic Overview
 
-- Information Gathering and Enumeration: WordPress Version Enumeration (manual and with WPScan/WhatWeb)
-- Information Gathering and Enumeration: WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
-- Information Gathering and Enumeration: Hidden Files and Sensitive Information Enumeration (with Gobuster)
+- WordPress Version Enumeration (manual and with WPScan/WhatWeb)
+- WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
+- Hidden Files and Sensitive Information Enumeration (with Gobuster)
 - WordPress Vulnerability Scanning (with WPScan)
 - WordPress Authentication Brute-Force Attacks (with Burp Suite)
-- WordPress Plugin Vulnerabilities: Arbitrary File Upload
-- WordPress Plugin Vulnerabilities: Stored XSS
+- WordPress Plugin Vulnerabilities Exploitation: Arbitrary File Upload
+- WordPress Plugin Vulnerabilities Exploitation: Stored XSS
 
 ### Prerequisites
 
