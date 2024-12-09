@@ -73,14 +73,10 @@
 
 ## 09 [Encoding, Filtering and Evasion Basics](./09_encoding_filtering_and_evasion_basics.md)
 
-- [x] Charset Encoding
-- [x] HTML Encoding
-- [x] URL Encoding
-- [x] Base64 Encoding
+- [x] Charset, HTML, URL and Base64 Encoding
 - [x] Bypassing Client-Side Filters
 - [x] Bypassing Server-Side Filters
-- [x] Web Application Firewalls (WAF) and Proxies
-- [x] Evading WAFs, Proxies and IDSs
+- [x] Bypassing Browser Based Restrictions
 
 ---
 ---
