@@ -2,17 +2,20 @@
 
 ## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
-- [x] Finding Website Ownership and IP Addresses
+- [x] Finding Ownership and IP Addresses (with WHOIS)
 - [x] Reviewing Webserver Metafiles for Information Leakage
-- [x] Search Engine Discovery
-- [x] Web App Fingerprinting
-- [x] Source Code Analysis
-- [x] Website Crawling and Spidering
-- [x] Web Server Fingerprinting
-- [x] DNS Enumeration
-- [x] Subdomain Enumeration
-- [x] Web App Vulnerability Scanning
-- [x] Automated Recon Frameworks
+- [x] Search Engine Discovery (with Google Dorks)
+- [x] Web App Fingerprinting: Web App Technology Fingerprinting (with BuiltWith/Wappalyzer/WhatWeb)
+- [x] Web App Fingerprinting: WAF Detection (with WAFW00F)
+- [x] Source Code Analysis: Copying Websites (with HTTRack)
+- [x] Source Code Analysis: Website Screenshots (with EyeWitness)
+- [x] Passive Crawling and Spidering (with Burp Suite/OWASP ZAP)
+- [x] Web Server Fingerprinting (with Nmap/Metasploit)
+- [x] DNS Enumeration (with DNSRecon/dnsenum/DiG/Fierce)
+- [x] Subdomain Enumeration (with Sublist3r/Fierce)
+- [x] Web Server Vulnerability Scanning (with Nikto)
+- [x] File and Directory Brute-Force (with Gobuster)
+- [x] Automated Web Reconnaissance (with OWASP Amass)
 
 ## 02 [Web Proxies and Web Information Gathering](./02_web_proxies_and_web_information_gathering.md)
 
