@@ -63,13 +63,13 @@
 
 ## 08 [CMS Security Testing](./08_cms_security_testing.md)
 
-- [x] CMS Security Testing Methodology
-- [x] WordPress Security Testing Methodology
-- [x] WordPress Information Gathering and Enumeration
-- [x] WordPress Vulnerability Scanning
-- [x] WordPress Authentication Attacks
-- [x] WordPress Plugin Exploitation
-- [x] WordPress Black-Box Penetration Testing
+- [x] WordPress Version Enumeration (manual and with WPScan/WhatWeb)
+- [x] WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
+- [x] Hidden Files and Sensitive Information Enumeration (with Gobuster)
+- [x] WordPress Vulnerability Scanning (with WPScan)
+- [x] WordPress Authentication Brute-Force Attacks (with Burp Suite)
+- [x] WordPress Plugin Vulnerabilities Exploitation: Arbitrary File Upload
+- [x] WordPress Plugin Vulnerabilities Exploitation: Stored XSS
 
 ## 09 [Encoding, Filtering and Evasion Basics](./09_encoding_filtering_and_evasion_basics.md)
 
