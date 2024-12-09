@@ -11,8 +11,8 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ### Course Topic Overview
 
-- WordPress Version Enumeration (manual and with WPScan/WhatWeb)
-- WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
+- WordPress Version Enumeration (Manual and with WPScan/WhatWeb)
+- WordPress Users, Plugins and Themes Enumeration (Manual and with WPScan)
 - Hidden Files and Sensitive Information Enumeration (with Gobuster)
 - WordPress Vulnerability Scanning (with WPScan)
 - WordPress Authentication Brute-Force Attacks (with Burp Suite)
