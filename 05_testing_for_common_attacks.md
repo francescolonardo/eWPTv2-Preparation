@@ -13,7 +13,7 @@ This course is designed to equip you with the knowledge and skills needed to ide
 - HTTP Method and Authentication Testing
 - Testing for Sensitive Data Exposure
 - Broken Authentication Attacks (Attacking Login Forms, Bypassing Authentication)
-- Session Security Testing (Session Hijacking, Session Fixation and CSRF)
+- Session Security Testing (Session Hijacking, CSRF)
 - Injection and Input Validation Attacks (Command Injection, Code Injection)
 - Testing for Security Misconfigurations
 - Exploiting Vulnerable and Outdated Components
@@ -333,7 +333,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-![Lab - Attacking HTTP Basic Authentication with Burp Suite](./assets/testing_for_common_attacks_lab_attacking_http_basic_authentication_with_burp_suite.png)
+![Lab - Attacking HTTP Basic Authentication with Burp Suite](./assets/05_testing_for_common_attacks_lab_attacking_http_basic_authentication_with_burp_suite.png)
 
 `burpsuite` > `Repeater`
 
@@ -494,7 +494,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-![Lab - Attacking HTTP Digest Authentication with Hydra](./assets/testing_for_common_attacks_lab_attacking_http_digest_authentication_with_hydra.png)
+![Lab - Attacking HTTP Digest Authentication with Hydra](./assets/05_testing_for_common_attacks_lab_attacking_http_digest_authentication_with_hydra.png)
 
 `burpsuite` > `Proxy`
 
@@ -526,7 +526,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-11-27 19:09:
 
 ---
 
-## Sensitive Data Exposure
+## Testing for Sensitive Data Exposure
 
 ### Sensitive Data Exposure Vulnerabilities
 
@@ -638,7 +638,7 @@ password:$k@d00$#@123456🔑
 
 ---
 
-## Broken Authentication
+## Broken Authentication Attacks
 
 ### Attacking Login Forms with Burp Suite
 
@@ -673,7 +673,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-![Lab - Vulnerable Bank Portal: Dictionary Attack](./assets/testing_for_common_attacks_lab_vulnerable_bank_portal_dictionary_attack.png)
+![Lab - Vulnerable Bank Portal: Dictionary Attack](./assets/05_testing_for_common_attacks_lab_vulnerable_bank_portal_dictionary_attack.png)
 
 `burpsuite` > `Proxy`
 
@@ -757,7 +757,7 @@ URL: `https://zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com/dev`.
 
 #### Lab Solution
 
-![Lab - Unlimited Attempts](./assets/testing_for_common_attacks_lab_unlimited_attempts.png)
+![Lab - Unlimited Attempts](./assets/05_testing_for_common_attacks_lab_unlimited_attempts.png)
 
 `burpsuite` > `Proxy`
 
@@ -819,9 +819,9 @@ Host: zl6h2bz2yh.execute-api.ap-southeast-1.amazonaws.com
 
 ---
 
-## Session Security
+## Session Security Testing
 
-### Session Hijacking Via Cookie Tampering
+### Session Hijacking via Cookie Tampering
 
 #### Lab Environment
 
@@ -839,7 +839,7 @@ The following credentials might be needed:
 
 #### Lab Solution
 
-![Lab - Improper Session Management III](./assets/testing_for_common_attacks_lab_improper_session_management_iii.png)
+![Lab - Improper Session Management III](./assets/05_testing_for_common_attacks_lab_improper_session_management_iii.png)
 
 `burpsuite` > `Repeater`
 
@@ -917,11 +917,7 @@ Date: Wed, 27 Nov 2024 15:13:33 GMT
 {"flag": "251e2203c108d0a8eb1a9572199d24d1"}🚩
 ```
 
----
-
-## Cross-Site Request Forgery (CSRF)
-
-### Advanced Electron Forum CSRF
+### Cross-Site Request Forgery (CSRF)
 
 #### Lab Environment
 
@@ -947,7 +943,7 @@ URL: `https://wij0p8tlyeqrezvx1057worm8.eu-central-7.attackdefensecloudlabs.com
 
 #### Lab Solution
 
-![Lab - Advanced Electron Forum](./assets/testing_for_common_attacks_lab_advanced_electron_forum.png)
+![Lab - Advanced Electron Forum](./assets/05_testing_for_common_attacks_lab_advanced_electron_forum.png)
 
 `searchsploit 'Advanced Electron Forum'`:
 ```
@@ -1024,7 +1020,7 @@ method="post" name="mysqlsetform">
 [...]
 ```
 
-![Lab - Advanced Electron Forum](./assets/testing_for_common_attacks_lab_advanced_electron_forum_1.png)
+![Lab - Advanced Electron Forum](./assets/05_testing_for_common_attacks_lab_advanced_electron_forum_1.png)
 
 `vim ./csrf.html`:
 ```html
@@ -1044,7 +1040,7 @@ method="post" name="mysqlsetform">
 
 ---
 
-## Injection and Input Validation
+## Injection and Input Validation Attacks
 
 ### Command Injection
 
@@ -1069,7 +1065,7 @@ Instructions: 
 
 `echo 'test' > ./test.txt`
 
-![Lab - Vulnerable File Backup Utility - Command Injection](./assets/testing_for_common_attacks_lab_vulnerable_file_backup_utility_command_injection.png)
+![Lab - Vulnerable File Backup Utility - Command Injection](./assets/05_testing_for_common_attacks_lab_vulnerable_file_backup_utility_command_injection.png)
 
 `burpsuite` > `Repeater`
 
@@ -1239,7 +1235,7 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-![Lab - PHP Code Injection](./assets/testing_for_common_attacks_lab_php_code_injection.png)
+![Lab - PHP Code Injection](./assets/05_testing_for_common_attacks_lab_php_code_injection.png)
 
 `burpsuite` > `Repeater`
 
@@ -1392,7 +1388,7 @@ Content-Type: text/html
 
 ---
 
-## Security Misconfigurations
+## Testing for Security Misconfigurations
 
 ### RCE Via MySQL
 
@@ -1536,6 +1532,15 @@ Query OK, 1 row affected (0.002 sec)
 <pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </pre>
 ```
+
+---
+---
+
+## Resources and References
+
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [HackTricks: PHP Tricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp)
+- [HackTricks: 3306 - Pentesting Mysql](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mysql)
 
 ---
 ---
