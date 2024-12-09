@@ -45,7 +45,7 @@
 - [x] HTTP Method and Authentication Testing
 - [x] Testing for Sensitive Data Exposure
 - [x] Broken Authentication Attacks (Attacking Login Forms, Bypassing Authentication)
-- [x] Session Security Testing (Session Hijacking, Session Fixation and CSRF)
+- [x] Session Security Testing (Session Hijacking, CSRF)
 - [x] Injection and Input Validation Attacks (Command Injection, Code Injection)
 - [x] Testing for Security Misconfigurations
 - [x] Exploiting Vulnerable and Outdated Components
