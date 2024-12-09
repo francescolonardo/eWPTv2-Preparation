@@ -63,8 +63,8 @@
 
 ## 08 [CMS Security Testing](./08_cms_security_testing.md)
 
-- [x] WordPress Version Enumeration (manual and with WPScan/WhatWeb)
-- [x] WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
+- [x] WordPress Version Enumeration (Manual and with WPScan/WhatWeb)
+- [x] WordPress Users, Plugins and Themes Enumeration (Manual and with WPScan)
 - [x] Hidden Files and Sensitive Information Enumeration (with Gobuster)
 - [x] WordPress Vulnerability Scanning (with WPScan)
 - [x] WordPress Authentication Brute-Force Attacks (with Burp Suite)
