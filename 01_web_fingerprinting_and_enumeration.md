@@ -10,7 +10,7 @@ This course will introduce you to web enumeration and information gathering and 
 
 ### Course Topic Overview
 
-- [[#Finding Ownership and IP Addresses (with WHOIS)]]
+- Finding Ownership and IP Addresses (with WHOIS)
 - Reviewing Webserver Metafiles for Information Leakage
 - Search Engine Discovery (with Google Dorks)
 - Web App Fingerprinting: Web App Technology Fingerprinting (with BuiltWith/Wappalyzer/WhatWeb)
