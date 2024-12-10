@@ -269,7 +269,7 @@ Interesting Finding(s):
 [+] Elapsed time: 00:01:05
 ```
 
-`wpscan --url https://kld7eiv6015o2an0dnaddvazz.eu-central-7.attackdefensecloudlabs.com/ --enumerate p --plugins-detection aggressive --api-token 'QcLDvaXzdC47XYW8a9cxfUEgXAOREsENGsJ0FE5u1A8'`:
+`wpscan --url https://kld7eiv6015o2an0dnaddvazz.eu-central-7.attackdefensecloudlabs.com/ --enumerate p --plugins-detection aggressive --api-token '<API-TOKEN>'`:
 ```
 [...]
 
