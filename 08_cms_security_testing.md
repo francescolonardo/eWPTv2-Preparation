@@ -11,8 +11,8 @@ You will then learn how to put to use the information gathered in the enumeratio
 
 ### Course Topic Overview
 
-- WordPress Version Enumeration (Manual and with WPScan/WhatWeb)
-- WordPress Users, Plugins and Themes Enumeration (Manual and with WPScan)
+- WordPress Version Enumeration (manual and with WPScan/WhatWeb)
+- WordPress Users, Plugins and Themes Enumeration (manual and with WPScan)
 - Hidden Files and Sensitive Information Enumeration (with Gobuster)
 - WordPress Vulnerability Scanning (with WPScan)
 - WordPress Authentication Brute-Force Attacks (with Burp Suite)
@@ -1351,7 +1351,7 @@ Interesting Finding(s):
 [+] Elapsed time: 00:00:16
 ```
 
-`wpscan --url https://782xmj7jlja3jikvj1cmel4pt.eu-central-6.attackdefensecloudlabs.com/ --enumerate p --api-token 'QcLDvaXzdC47XYW8a9cxfUEgXAOREsENGsJ0FE5u1A8'`:
+`wpscan --url https://782xmj7jlja3jikvj1cmel4pt.eu-central-6.attackdefensecloudlabs.com/ --enumerate p --api-token '<API-TOKEN>'`:
 ```
 _______________________________________________________________
          __          _______   _____
