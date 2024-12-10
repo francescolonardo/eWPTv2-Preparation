@@ -972,6 +972,16 @@ You have found: [ 1291 ] XSS vector(s)! -> [100% VULNERABLE]📌
 ---
 ---
 
+## Tools and Frameworks
+
+- [XSSer](https://github.com/epsylon/xsser)
+	Cross Site "Scripter" (aka XSSer) is an automatic framework to detect, exploit and report XSS vulnerabilities in web-based applications.
+	It provides several options to try to bypass certain filters and various special techniques for code injection.
+	XSSer has pre-installed (>1300 XSS) attacking vectors and can bypass-exploit code on several browsers/WAFs.
+
+---
+---
+
 ## Resources and References
 
 - [Cross Site Scripting (XSS) Vulnerability Payload List](https://github.com/payloadbox/xss-payload-list)
