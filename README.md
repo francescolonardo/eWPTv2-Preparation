@@ -38,7 +38,7 @@
 - [x] Identifying and Exploiting SQL Injection Vulnerabilities with Automated Tools (SQLMap)
 - [x] Penetration Testing of NoSQL Databases
 
-## 05 [Testing for Common Attacks](./04_testing_for_common_attacks.md)
+## 05 [Testing for Common Attacks](./05_testing_for_common_attacks.md)
 
 - [x] HTTP Method and Authentication Testing
 - [x] Testing for Sensitive Data Exposure
