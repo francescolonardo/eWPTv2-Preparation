@@ -23,7 +23,6 @@
 - [x] Burp Suite Target, Intruder, Sequencer, Repeater and Decoder
 - [x] Crawling and Spidering with OWASP ZAP
 - [x] Directory Enumeration with Burp Suite and OWASP ZAP
-- [x] Attacking HTTP Forms with Burp Suite and OWASP ZAP
 
 ## 03 [XSS Attacks](./03_xss_attacks.md)
 
