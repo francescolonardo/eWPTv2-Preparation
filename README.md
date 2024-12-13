@@ -1,6 +1,6 @@
 # eLearnSecurity Web Application Penetration Tester (eWPTv2) Preparation
 
-## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
+[## 01 Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
 - [x] Finding Ownership and IP Addresses (with WHOIS)
 - [x] Reviewing Webserver Metafiles for Information Leakage
