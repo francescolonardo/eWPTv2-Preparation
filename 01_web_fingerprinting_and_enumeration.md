@@ -10,8 +10,8 @@ This course will introduce you to web enumeration and information gathering and 
 
 ### Course Topic Overview
 
-- Finding Ownership and IP Addresses (with WHOIS)
-- Reviewing Webserver Metafiles for Information Leakage
+- Finding Ownership and IP Addresses (with WHOIS, Netcraft)
+- Reviewing Webserver Metafiles for Information Leakage (Manual)
 - Search Engine Discovery (with Google Dorks)
 - Web App Fingerprinting: Web App Technology Fingerprinting (with BuiltWith/Wappalyzer/WhatWeb)
 - Web App Fingerprinting: WAF Detection (with WAFW00F)
@@ -192,7 +192,7 @@ Ref:            https://rdap.arin.net/registry/entity/ZEITI
 
 ## Reviewing Webserver Metafiles for Information Leakage
 
-### Reviewing Webserver Metafiles
+### Reviewing Webserver Metafiles (Manual)
 
 ### Lab Solution
 
