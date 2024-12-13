@@ -47,7 +47,7 @@ This course will introduce you to web enumeration and information gathering and 
 
 ## Finding Ownership and IP Addresses
 
-### WHOIS
+### Ownership and IP Addresses Discovery (with WHOIS)
 
 ### Lab Solution
 
