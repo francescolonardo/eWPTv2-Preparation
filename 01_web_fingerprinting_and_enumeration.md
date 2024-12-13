@@ -45,7 +45,7 @@ This course will introduce you to web enumeration and information gathering and 
 ---
 ---
 
-## Finding Ownership and IP Addresses (with WHOIS)
+## Finding Ownership and IP Addresses
 
 ### WHOIS
 
