@@ -2,7 +2,7 @@
 
 ## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
-- [x] Finding Ownership and IP Addresses (with WHOIS)
+- [x] Finding Ownership and IP Addresses (with WHOIS, Netcraft, DNSRecon/DNSDumpster)
 - [x] Reviewing Webserver Metafiles for Information Leakage
 - [x] Search Engine Discovery (with Google Dorks)
 - [x] Web App Fingerprinting: Web App Technology Fingerprinting (with BuiltWith/Wappalyzer/WhatWeb)
