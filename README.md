@@ -1,4 +1,4 @@
-# eLearnSecurity Web Application Penetration Testing (eWPTv2)
+# eLearnSecurity Web Application Penetration Tester (eWPTv2) Preparation
 
 ## 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
 
