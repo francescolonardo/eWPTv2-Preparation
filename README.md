@@ -4,6 +4,16 @@
 	<img src="https://assets.ine.com/certifications/badges/eWPT.png" alt="eWPT Logo" width="150" height="auto">
 </div>
 
+## Introduction
+
+This repository is dedicated to documenting my preparation for the **eWPTv2** exam. It includes comprehensive notes and detailed walkthroughs of various topics covered in the exam curriculum, such as **Web Application Penetration Testing**, **SQL Injection**, **XSS Attacks**, and **Web Service Security Testing**.
+
+The notes are organized to provide a clear understanding of each topic, with practical examples, *input commands*, and their corresponding *outputs*. This allows readers to learn and follow the techniques without the need to set up or run the commands themselves.
+
+Each section provides step-by-step guides on how to identify and exploit common web application vulnerabilities, offering valuable insights into the tools, methodologies, and best practices used by penetration testers. By working through these topics, I aim to strengthen my skills and build a deeper understanding of web application security.
+
+Whether you're preparing for the eWPTv2 exam or just looking to enhance your web application security knowledge, this repository serves as both a study guide and a useful resource for anyone interested in offensive security.
+
 ## Learning Path Topics
 
 #### 01 [Web Fingerprinting and Enumeration](./01_web_fingerprinting_and_enumeration.md)
