@@ -1,4 +1,4 @@
-# eLearnSecurity Web Application Penetration Tester (eWPTv2) Preparation
+# Web Application Penetration Tester (eWPTv2) - Study Material
 
 <div>
 	<img src="https://assets.ine.com/certifications/badges/eWPT.png" alt="eWPT Logo" width="150" height="auto">
